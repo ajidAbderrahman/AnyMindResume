@@ -13,6 +13,7 @@
 		806C442E282C20B9003D1A57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4404282C20B7003D1A57 /* ContentView.swift */; };
 		806C442F282C20B9003D1A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 806C4405282C20B9003D1A57 /* Assets.xcassets */; };
 		806C4430282C20B9003D1A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 806C4405282C20B9003D1A57 /* Assets.xcassets */; };
+		806C4441282C220C003D1A57 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 806C4440282C220C003D1A57 /* ViewInspector */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				806C4441282C220C003D1A57 /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +182,9 @@
 				806C4419282C20B9003D1A57 /* PBXTargetDependency */,
 			);
 			name = "Tests iOS";
+			packageProductDependencies = (
+				806C4440282C220C003D1A57 /* ViewInspector */,
+			);
 			productName = "Tests iOS";
 			productReference = 806C4417282C20B9003D1A57 /* Tests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -237,6 +242,9 @@
 				Base,
 			);
 			mainGroup = 806C43FD282C20B7003D1A57;
+			packageReferences = (
+				806C443F282C220C003D1A57 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+			);
 			productRefGroup = 806C440B282C20B9003D1A57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -685,6 +693,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		806C443F282C220C003D1A57 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		806C4440282C220C003D1A57 /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 806C443F282C220C003D1A57 /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 806C43FE282C20B7003D1A57 /* Project object */;
 }
