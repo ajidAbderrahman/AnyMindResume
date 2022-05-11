@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		806C441C282C20B9003D1A57 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C441B282C20B9003D1A57 /* Tests_iOS.swift */; };
-		806C441E282C20B9003D1A57 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C441D282C20B9003D1A57 /* Tests_iOSLaunchTests.swift */; };
-		806C4428282C20B9003D1A57 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4427282C20B9003D1A57 /* Tests_macOS.swift */; };
-		806C442A282C20B9003D1A57 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4429282C20B9003D1A57 /* Tests_macOSLaunchTests.swift */; };
 		806C442B282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442C282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442D282C20B9003D1A57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4404282C20B7003D1A57 /* ContentView.swift */; };
@@ -44,11 +40,7 @@
 		806C4410282C20B9003D1A57 /* AnyMindResume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyMindResume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806C4412282C20B9003D1A57 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		806C4417282C20B9003D1A57 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		806C441B282C20B9003D1A57 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
-		806C441D282C20B9003D1A57 /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
 		806C4423282C20B9003D1A57 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		806C4427282C20B9003D1A57 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
-		806C4429282C20B9003D1A57 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +118,6 @@
 		806C441A282C20B9003D1A57 /* Tests iOS */ = {
 			isa = PBXGroup;
 			children = (
-				806C441B282C20B9003D1A57 /* Tests_iOS.swift */,
-				806C441D282C20B9003D1A57 /* Tests_iOSLaunchTests.swift */,
 			);
 			path = "Tests iOS";
 			sourceTree = "<group>";
@@ -135,8 +125,6 @@
 		806C4426282C20B9003D1A57 /* Tests macOS */ = {
 			isa = PBXGroup;
 			children = (
-				806C4427282C20B9003D1A57 /* Tests_macOS.swift */,
-				806C4429282C20B9003D1A57 /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
 			sourceTree = "<group>";
@@ -317,8 +305,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				806C441E282C20B9003D1A57 /* Tests_iOSLaunchTests.swift in Sources */,
-				806C441C282C20B9003D1A57 /* Tests_iOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,8 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				806C442A282C20B9003D1A57 /* Tests_macOSLaunchTests.swift in Sources */,
-				806C4428282C20B9003D1A57 /* Tests_macOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
