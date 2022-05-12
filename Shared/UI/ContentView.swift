@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let resume = Resume()
     var body: some View {
         NavigationView {
-            List(resume.sections, id: \.self) { section in
+            HStack {
                 NavigationLink {
-                    PersonalInfoView()
+                    ResumeView()
                 } label: {
-                    Text(section)
-                        .padding()
+                    Image(systemName: "plus.circle.fill")
+                        .resizable()
+                }
+                Spacer(minLength: 40)
+                NavigationLink {
+                    ResumeView()
+                } label: {
+                    Image(systemName: "pencil.circle.fill")
+                        .resizable()
                 }
             }
-            .navigationTitle("Resume")
+            .frame(width: 240, height: 100, alignment: .center)
+            .padding()
         }
     }
 }
