@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80247EC2282D0D9E000350C6 /* Resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247EC1282D0D9E000350C6 /* Resume.swift */; };
+		80247EC3282D0D9E000350C6 /* Resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247EC1282D0D9E000350C6 /* Resume.swift */; };
 		806C442B282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442C282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442D282C20B9003D1A57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4404282C20B7003D1A57 /* ContentView.swift */; };
@@ -28,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		80247EC1282D0D9E000350C6 /* Resume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resume.swift; sourceTree = "<group>"; };
 		806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyMindResumeApp.swift; sourceTree = "<group>"; };
 		806C4404282C20B7003D1A57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		806C4405282C20B9003D1A57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +67,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80247EC0282D0D81000350C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80247EC1282D0D9E000350C6 /* Resume.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		80247EC4282D0DF3000350C6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */,
+				806C4404282C20B7003D1A57 /* ContentView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		80247EC5282D0E32000350C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				806C4405282C20B9003D1A57 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		806C43FD282C20B7003D1A57 = {
 			isa = PBXGroup;
 			children = (
@@ -78,9 +106,9 @@
 		806C4402282C20B7003D1A57 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */,
-				806C4404282C20B7003D1A57 /* ContentView.swift */,
-				806C4405282C20B9003D1A57 /* Assets.xcassets */,
+				80247EC0282D0D81000350C6 /* Models */,
+				80247EC4282D0DF3000350C6 /* UI */,
+				80247EC5282D0E32000350C6 /* Resources */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -253,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80247EC2282D0D9E000350C6 /* Resume.swift in Sources */,
 				806C442D282C20B9003D1A57 /* ContentView.swift in Sources */,
 				806C442B282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */,
 			);
@@ -262,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80247EC3282D0D9E000350C6 /* Resume.swift in Sources */,
 				806C442E282C20B9003D1A57 /* ContentView.swift in Sources */,
 				806C442C282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */,
 			);
