@@ -23,26 +23,28 @@ protocol ResumeSection {
     var title: String {get}
 }
 
-struct PersonalInfo: ResumeSection {
+class PersonalInfo: ResumeSection, ObservableObject {
     var title: String {
         "Personal Info"
     }
-    var firstName: String
-    var lastName: String
-    var mobileNumber: String
-    var emailAddress: String
-    var address: String
+    @Published var firstName: String = ""
+    @Published var lastName: String = ""
+    @Published var mobileNumber: String = ""
+    @Published var emailAddress: String = ""
+    @Published var address: String = ""
     
 }
 
-extension PersonalInfo {
-    init() {
-        self.init(
-            firstName: "",
-            lastName: "",
-            mobileNumber: "",
-            emailAddress: "",
-            address: ""
-        )
+extension PersonalInfo: CustomStringConvertible {
+    var description: String {
+        """
+            First Name: \(firstName)\n
+            Last Name: \(lastName)\n
+            Mobile: \(mobileNumber)\n
+            Email: \(emailAddress)\n
+            Address: \(address)
+        """
     }
+    
+    
 }

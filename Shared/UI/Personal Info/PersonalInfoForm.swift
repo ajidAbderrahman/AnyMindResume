@@ -8,29 +8,29 @@
 import SwiftUI
 
 struct PersonalInfoForm: View {
-    @State private var firstName: String = ""
+    @ObservedObject var personalInfo: PersonalInfo
     var body: some View {
         Form {
             Section("Personal Info") {
                 HStack {
-                    TextField("First Name", text: $firstName)
-                    TextField("Last Name", text: $firstName)
+                    TextField("First Name", text: $personalInfo.firstName)
+                    TextField("Last Name", text: $personalInfo.lastName)
                 }
-                TextField("Phone Number", text: $firstName)
-                TextField("Email", text: $firstName)
-                TextField("Address", text: $firstName)
+                TextField("Phone Number", text: $personalInfo.mobileNumber)
+                TextField("Email", text: $personalInfo.emailAddress)
+                TextField("Address", text: $personalInfo.address)
             }
-            TextField("Total Years of experience", text: $firstName)
-            Section("Career Objective") {
-                TextEditor(text: $firstName)
-                    .frame(height: 200)
-            }
+            //TextField("Total Years of experience", text: $)
+//            Section("Career Objective") {
+//                TextEditor(text: $firstName)
+//                    .frame(height: 200)
+//            }
         }
     }
 }
 
 struct PersonalInfoForm_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalInfoForm()
+        PersonalInfoForm(personalInfo: PersonalInfo())
     }
 }
