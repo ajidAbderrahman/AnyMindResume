@@ -13,10 +13,16 @@ extension ContentView: Inspectable {}
 
 class ContentViewTest: XCTestCase {
     
+    func test_Content_hasList() {
+        let sut = ContentView()
+        
+        XCTAssertNoThrow(try sut.inspect().list())
+    }
+    
     func testStringValue() throws {
         let sut = ContentView()
-        let value = try sut.inspect().text().string()
-        XCTAssertEqual(value, "Hello, world!")
+        let value = try sut.inspect().list().text(0).string()
+        XCTAssertEqual(value, "Personal Information")
     }
     
 }
