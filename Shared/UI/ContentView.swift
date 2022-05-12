@@ -13,7 +13,7 @@ struct ContentView: View {
         NavigationView {
             List(resume.sections, id: \.self) { section in
                 NavigationLink {
-                    Text(section)
+                    PersonalInfoView()
                 } label: {
                     Text(section)
                         .padding()

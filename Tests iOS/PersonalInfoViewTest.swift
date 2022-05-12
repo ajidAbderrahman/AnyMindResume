@@ -13,11 +13,4 @@ extension PersonalInfoView: Inspectable {}
 
 class PersonalInfoViewTest: XCTestCase {
 
-    func testStringValue() throws {
-        let sut = PersonalInfoView()
-        
-        let value = try sut.inspect().text().string()
-        XCTAssertEqual(value, "Hello, World!")
-    }
-
 }

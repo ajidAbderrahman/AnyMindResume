@@ -9,7 +9,19 @@ import SwiftUI
 
 struct PersonalInfoView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .center) {
+            Button {
+               // TODO: add action
+            } label: {
+                Image(systemName: "person.circle.fill")
+                    .resizable()
+            }
+            .frame(width: 100, height: 100)
+            PersonalInfoForm()
+        }
+        .navigationTitle("Personal Info")
+        .navigationBarTitleDisplayMode(.large)
+        .padding()
     }
 }
 
