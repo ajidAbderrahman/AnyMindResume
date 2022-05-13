@@ -26,6 +26,8 @@
 		806C4430282C20B9003D1A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 806C4405282C20B9003D1A57 /* Assets.xcassets */; };
 		806C4452282C28D6003D1A57 /* ContentViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4451282C28D6003D1A57 /* ContentViewTest.swift */; };
 		806C4455282C2A46003D1A57 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 806C4454282C2A46003D1A57 /* ViewInspector */; };
+		808DB344282E66EA00452F5D /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808DB343282E66EA00452F5D /* PersonalInfo.swift */; };
+		808DB345282E66EA00452F5D /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808DB343282E66EA00452F5D /* PersonalInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,7 @@
 		806C4412282C20B9003D1A57 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		806C4448282C289F003D1A57 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		806C4451282C28D6003D1A57 /* ContentViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTest.swift; sourceTree = "<group>"; };
+		808DB343282E66EA00452F5D /* PersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				80247EC1282D0D9E000350C6 /* Resume.swift */,
+				808DB343282E66EA00452F5D /* PersonalInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +317,7 @@
 				80247EE5282D6D9D000350C6 /* ResumeView.swift in Sources */,
 				80247EC8282D128D000350C6 /* PersonalInfoView.swift in Sources */,
 				806C442D282C20B9003D1A57 /* ContentView.swift in Sources */,
+				808DB344282E66EA00452F5D /* PersonalInfo.swift in Sources */,
 				80247ECD282D2A30000350C6 /* PersonalInfoForm.swift in Sources */,
 				806C442B282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */,
 			);
@@ -327,6 +332,7 @@
 				80247EE6282D6D9D000350C6 /* ResumeView.swift in Sources */,
 				80247EC9282D128D000350C6 /* PersonalInfoView.swift in Sources */,
 				806C442E282C20B9003D1A57 /* ContentView.swift in Sources */,
+				808DB345282E66EA00452F5D /* PersonalInfo.swift in Sources */,
 				80247ECE282D2A30000350C6 /* PersonalInfoForm.swift in Sources */,
 				806C442C282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */,
 			);

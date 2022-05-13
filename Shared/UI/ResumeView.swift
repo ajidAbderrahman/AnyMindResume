@@ -8,22 +8,30 @@
 import SwiftUI
 
 struct ResumeView: View {
-    private let resume = Resume()
+    @StateObject var resume: Resume
     var body: some View {
-        List(resume.sections, id: \.title) { section in
+        List(resume.sections, id: \.self) { section in
             NavigationLink {
-                PersonalInfoView()
+                PersonalInfoView(personalInfo: resume.personalInfo)
             } label: {
-                Text(section.title)
+                Text(section)
                     .padding()
             }
         }
         .navigationTitle("Resume")
+        .toolbar(content: {
+            Button {
+                print(resume)
+            } label: {
+                Text("Save")
+            }
+            
+        })
     }
 }
 
 struct ResumeView_Previews: PreviewProvider {
     static var previews: some View {
-        ResumeView()
+        ResumeView(resume: Resume())
     }
 }
