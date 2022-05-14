@@ -40,6 +40,8 @@
 		806C4455282C2A46003D1A57 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 806C4454282C2A46003D1A57 /* ViewInspector */; };
 		808DB344282E66EA00452F5D /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808DB343282E66EA00452F5D /* PersonalInfo.swift */; };
 		808DB345282E66EA00452F5D /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808DB343282E66EA00452F5D /* PersonalInfo.swift */; };
+		809B4C032830278900927067 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B4C022830278900927067 /* Skills.swift */; };
+		809B4C042830278900927067 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B4C022830278900927067 /* Skills.swift */; };
 		80D6BEAD282EDF1500A429A3 /* db_model_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80D6BEAB282EDF1500A429A3 /* db_model_v1.xcdatamodeld */; };
 		80D6BEAE282EDF1500A429A3 /* db_model_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80D6BEAB282EDF1500A429A3 /* db_model_v1.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,7 @@
 		806C4448282C289F003D1A57 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		806C4451282C28D6003D1A57 /* ContentViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTest.swift; sourceTree = "<group>"; };
 		808DB343282E66EA00452F5D /* PersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
+		809B4C022830278900927067 /* Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
 		80D6BEAC282EDF1500A429A3 /* db_model_v1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db_model_v1.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +114,7 @@
 				806166FB282FD1D70033EB26 /* Models+CoreData */,
 				80247EC1282D0D9E000350C6 /* Resume.swift */,
 				808DB343282E66EA00452F5D /* PersonalInfo.swift */,
+				809B4C022830278900927067 /* Skills.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -369,6 +373,7 @@
 				806166FD282FD2680033EB26 /* ResumeMO.swift in Sources */,
 				80616704282FD40A0033EB26 /* DBHelper.swift in Sources */,
 				80247EE2282D5FCD000350C6 /* PhotoPicker.swift in Sources */,
+				809B4C032830278900927067 /* Skills.swift in Sources */,
 				80616707282FD43C0033EB26 /* CoreDBHelper.swift in Sources */,
 				80247EC2282D0D9E000350C6 /* Resume.swift in Sources */,
 				80247EE5282D6D9D000350C6 /* ResumeView.swift in Sources */,
@@ -391,6 +396,7 @@
 				806166FE282FD2680033EB26 /* ResumeMO.swift in Sources */,
 				80616705282FD40A0033EB26 /* DBHelper.swift in Sources */,
 				80247EE3282D5FCD000350C6 /* PhotoPicker.swift in Sources */,
+				809B4C042830278900927067 /* Skills.swift in Sources */,
 				80616708282FD43C0033EB26 /* CoreDBHelper.swift in Sources */,
 				80247EC3282D0D9E000350C6 /* Resume.swift in Sources */,
 				80247EE6282D6D9D000350C6 /* ResumeView.swift in Sources */,

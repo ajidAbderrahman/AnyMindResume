@@ -8,19 +8,11 @@
 import Foundation
 
 struct Resume {
-    var title: String
-    var personalInfo: PersonalInfo
+    var title: String = UUID().uuidString
+    var personalInfo: PersonalInfo = PersonalInfo()
+    var skills: Skills = Skills()
     
     var sections: [String] {
-        [personalInfo.title]
-    }
-}
-
-extension Resume {
-    init() {
-        self.init(
-            title: UUID().uuidString,
-            personalInfo: PersonalInfo()
-        )
+        [personalInfo.title, skills.title]
     }
 }
