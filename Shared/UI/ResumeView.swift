@@ -9,7 +9,6 @@ import SwiftUI
 
 protocol ResumeViewModel {
     func addNewResume(_ value: Resume)
-    func fetchResumes()
 }
 
 struct ResumeView: View {
@@ -28,7 +27,6 @@ struct ResumeView: View {
         .toolbar(content: {
             Button {
                 viewModel.addNewResume(resume)
-                viewModel.fetchResumes()
             } label: {
                 Text("Save")
             }
@@ -52,10 +50,6 @@ extension ResumeView {
             dataManager.addResume(value)
         }
         
-        func fetchResumes() {
-            print(dataManager.fetchResumeList())
-            
-        }
     }
 
 }

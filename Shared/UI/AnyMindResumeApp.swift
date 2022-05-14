@@ -11,7 +11,7 @@ import SwiftUI
 struct AnyMindResumeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: ContentView.ViewModel())
                 .environment(\.managedObjectContext, CoreDBHelper.shared.context)
         }
     }
