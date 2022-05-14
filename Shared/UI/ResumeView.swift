@@ -7,32 +7,13 @@
 
 import SwiftUI
 
-protocol ResumeViewModelProtocol {
+protocol ResumeViewModel {
     func addNewResume(_ value: Resume)
     func fetchResumes()
 }
 
-final class ResumeViewModel: ObservableObject {
-    var dataManager: DataManager
-    
-    init(dataManager: DataManager = LocalDataManager.shared) {
-        self.dataManager = dataManager
-    }
-}
-
-extension ResumeViewModel: ResumeViewModelProtocol {
-    func addNewResume(_ value: Resume) {
-        dataManager.addResume(value)
-    }
-    
-    func fetchResumes() {
-        print(dataManager.fetchResumeList())
-        
-    }
-}
-
 struct ResumeView: View {
-    @ObservedObject var viewModel: ResumeViewModel
+    @ObservedObject private(set) var viewModel: ViewModel
     @State var resume: Resume
     var body: some View {
         List(resume.sections, id: \.self) { section in
@@ -56,8 +37,32 @@ struct ResumeView: View {
     }
 }
 
+//MARK: ViewModel
+extension ResumeView {
+    
+    class ViewModel: ObservableObject, ResumeViewModel {
+        
+        private let dataManager: DataManager
+        
+        init(dataManager: DataManager = LocalDataManager.shared) {
+            self.dataManager = dataManager
+        }
+        
+        func addNewResume(_ value: Resume) {
+            dataManager.addResume(value)
+        }
+        
+        func fetchResumes() {
+            print(dataManager.fetchResumeList())
+            
+        }
+    }
+
+}
+
+//MARK: Preview
 struct ResumeView_Previews: PreviewProvider {
     static var previews: some View {
-        ResumeView(viewModel: ResumeViewModel(), resume: Resume())
+        ResumeView(viewModel: ResumeView.ViewModel(), resume: Resume())
     }
 }
