@@ -41,7 +41,7 @@ extension CoreDBHelper: DBHelper {
         do {
             try context.save()
         } catch {
-            fatalError("error saving context while creating an object")
+            fatalError(error.localizedDescription)
         }
     }
     

@@ -26,7 +26,8 @@ extension ResumeMO {
     func convertToResume() -> Resume {
         Resume(
             title: title,
-            personalInfo: personalInfo.convertToPersonalInfo()
+            personalInfo: personalInfo.convertToPersonalInfo(),
+            skills: skills.convertToSkills()
         )
     }
 }

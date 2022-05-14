@@ -48,6 +48,7 @@ struct SkillsView: View {
         }
     
     private func addSkill() {
+        guard !skill.isEmpty else { return }
         skills.elements.append(skill)
         skill = ""
     }

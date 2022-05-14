@@ -10,16 +10,16 @@ import CoreData
 @objc(SkillsMO)
 final class SkillsMO: NSManagedObject {
     
-    @NSManaged var elements: [NSString]
+    @NSManaged var elements: [String]
     
     convenience init(insertInto context: NSManagedObjectContext, skills: Skills) {
         self.init(entity: SkillsMO.entity(), insertInto: context)
-        elements = skills.elements.map { NSString(string: $0) }
+        elements = skills.elements
     }
 }
 
 extension SkillsMO {
     func convertToSkills() -> Skills {
-        Skills(elements: elements.map { String($0) })
+        Skills(elements: elements)
     }
 }

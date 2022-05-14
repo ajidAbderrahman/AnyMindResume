@@ -9,6 +9,12 @@ import Foundation
 
 struct Skills {
     
-    var elements: [String] = []
+    var elements: [String]
 }
 
+extension Skills {
+    
+    init() {
+        self.init(elements: [])
+    }
+}

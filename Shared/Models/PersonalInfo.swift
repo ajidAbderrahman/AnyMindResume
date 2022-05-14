@@ -9,12 +9,28 @@ import Foundation
 
 struct PersonalInfo {
     
-    var firstName: String = ""
-    var lastName: String = ""
-    var mobile: String = ""
-    var email: String = ""
-    var address: String = ""
-    var yearsOfExperience: String = ""
-    var objectives: String = ""
+    var firstName: String
+    var lastName: String
+    var mobile: String
+    var email: String
+    var address: String
+    var yearsOfExperience: String
+    var objectives: String
     
+}
+
+extension PersonalInfo {
+    
+    init() {
+        
+        self.init(
+            firstName: "",
+            lastName: "",
+            mobile: "",
+            email: "",
+            address: "",
+            yearsOfExperience: "",
+            objectives: ""
+        )
+    }
 }

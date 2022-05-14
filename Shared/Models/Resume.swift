@@ -13,11 +13,22 @@ enum ResumeSection: String, CaseIterable {
 }
 
 struct Resume {
-    var title: String = UUID().uuidString
-    var personalInfo: PersonalInfo = PersonalInfo()
-    var skills: Skills = Skills()
+    var title: String
+    var personalInfo: PersonalInfo
+    var skills: Skills
     
     var sections: [ResumeSection] {
         ResumeSection.allCases
+    }
+}
+
+extension Resume {
+    
+    init() {
+        self.init(
+            title: UUID().uuidString,
+            personalInfo: PersonalInfo(),
+            skills: Skills()
+        )
     }
 }

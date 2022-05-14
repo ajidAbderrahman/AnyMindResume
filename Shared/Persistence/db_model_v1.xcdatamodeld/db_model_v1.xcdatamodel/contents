@@ -20,7 +20,7 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Skills" representedClassName="SkillsMO" syncable="YES">
-        <attribute name="elements" optional="YES" attributeType="Transformable" valueTransformerName=""/>
+        <attribute name="elements" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
     </entity>
     <elements>
         <element name="PersonalInfo" positionX="-13.36346435546875" positionY="5.341583251953125" width="128" height="134"/>
