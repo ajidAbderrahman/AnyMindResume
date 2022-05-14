@@ -31,12 +31,12 @@ struct ContentView: View {
                         .resizable()
                 }
                 .frame(width: 40,height: 40, alignment: .trailing)
+                .padding()
+            }
+            .onAppear {
+                viewModel.fetchResumes()
             }
             .navigationTitle("Resumes")
-        }
-        .padding()
-        .onAppear {
-            viewModel.fetchResumes()
         }
     }
 }

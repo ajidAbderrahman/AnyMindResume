@@ -8,8 +8,14 @@
 import Foundation
 
 struct PersonalInfo {
+    
     var firstName: String
     var lastName: String
+    var mobile: String
+    var email: String
+    var address: String
+    var yearsOfExperience: String
+    var objectives: String
     
     var title: String {
         "Personal Info"
@@ -18,6 +24,14 @@ struct PersonalInfo {
 
 extension PersonalInfo {
     init() {
-        self.init(firstName: "", lastName: "")
+        self.init(
+            firstName: "",
+            lastName: "",
+            mobile: "",
+            email: "",
+            address: "",
+            yearsOfExperience: "",
+            objectives: ""
+        )
     }
 }

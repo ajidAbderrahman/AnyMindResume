@@ -11,16 +11,11 @@ struct PersonalInfoView: View {
     @Binding var personalInfo: PersonalInfo
     
     var body: some View {
-//        VStack(alignment: .center) {
-//            PersonalInfoForm(personalInfo: personalInfo)
-//        }
-        HStack {
-            TextField("First Name", text: $personalInfo.firstName)
-            TextField("Last Name", text: $personalInfo.lastName)
+        VStack {
+            PersonalInfoForm(personalInfo: $personalInfo)
         }
         .navigationTitle("Personal Info")
         .navigationBarTitleDisplayMode(.large)
-        .padding()
     }
 }
 

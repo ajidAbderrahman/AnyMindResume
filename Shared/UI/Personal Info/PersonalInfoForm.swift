@@ -8,30 +8,34 @@
 import SwiftUI
 
 struct PersonalInfoForm: View {
-//    @ObservedObject var personalInfo: PersonalInfo
+    @Binding var personalInfo: PersonalInfo
     var body: some View {
-        Text("Hello, world!")
-//        Form {
-//            Section("Personal Info") {
-//                HStack {
-//                    TextField("First Name", text: $personalInfo.firstName)
-//                    TextField("Last Name", text: $personalInfo.lastName)
-//                }
-//                TextField("Phone Number", text: $personalInfo.mobileNumber)
-//                TextField("Email", text: $personalInfo.emailAddress)
-//                TextField("Address", text: $personalInfo.address)
-//            }
-            //TextField("Total Years of experience", text: $)
-//            Section("Career Objective") {
-//                TextEditor(text: $firstName)
-//                    .frame(height: 200)
-//            }
-//        }
+        Form {
+            Section("Personal Info") {
+                HStack {
+                    TextField("First Name", text: $personalInfo.firstName)
+                    TextField("Last Name", text: $personalInfo.lastName)
+                }
+                TextField("Phone Number", text: $personalInfo.mobile)
+                    .keyboardType(.phonePad)
+                TextField("Email", text: $personalInfo.email)
+                    .keyboardType(.emailAddress)
+                TextField("Address", text: $personalInfo.address)
+            }
+            Section("Total Years of experience") {
+                TextField("ex: 1.5", text: $personalInfo.yearsOfExperience)
+                    .keyboardType(.decimalPad)
+            }
+            Section("Career Objective") {
+                TextEditor(text: $personalInfo.objectives)
+                    .frame(height: 150, alignment: .center)
+            }
+        }
     }
 }
 
 struct PersonalInfoForm_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalInfoForm()
+        PersonalInfoForm(personalInfo: Binding<PersonalInfo>.constant(PersonalInfo()))
     }
 }
