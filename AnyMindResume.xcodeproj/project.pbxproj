@@ -42,6 +42,10 @@
 		808DB345282E66EA00452F5D /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808DB343282E66EA00452F5D /* PersonalInfo.swift */; };
 		809B4C032830278900927067 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B4C022830278900927067 /* Skills.swift */; };
 		809B4C042830278900927067 /* Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B4C022830278900927067 /* Skills.swift */; };
+		809B4C0C28302BBC00927067 /* SkillsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B4C0B28302BBC00927067 /* SkillsMO.swift */; };
+		809B4C0D28302BBC00927067 /* SkillsMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B4C0B28302BBC00927067 /* SkillsMO.swift */; };
+		809B4C0F283034D300927067 /* SkillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B4C0E283034D300927067 /* SkillsView.swift */; };
+		809B4C10283034D300927067 /* SkillsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809B4C0E283034D300927067 /* SkillsView.swift */; };
 		80D6BEAD282EDF1500A429A3 /* db_model_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80D6BEAB282EDF1500A429A3 /* db_model_v1.xcdatamodeld */; };
 		80D6BEAE282EDF1500A429A3 /* db_model_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80D6BEAB282EDF1500A429A3 /* db_model_v1.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -79,6 +83,8 @@
 		806C4451282C28D6003D1A57 /* ContentViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTest.swift; sourceTree = "<group>"; };
 		808DB343282E66EA00452F5D /* PersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
 		809B4C022830278900927067 /* Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skills.swift; sourceTree = "<group>"; };
+		809B4C0B28302BBC00927067 /* SkillsMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsMO.swift; sourceTree = "<group>"; };
+		809B4C0E283034D300927067 /* SkillsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsView.swift; sourceTree = "<group>"; };
 		80D6BEAC282EDF1500A429A3 /* db_model_v1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db_model_v1.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +132,7 @@
 				806C4404282C20B7003D1A57 /* ContentView.swift */,
 				80247EC6282D126B000350C6 /* Personal Info */,
 				80247EE4282D6D9D000350C6 /* ResumeView.swift */,
+				809B4C0E283034D300927067 /* SkillsView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 			children = (
 				806166FC282FD2680033EB26 /* ResumeMO.swift */,
 				806166FF282FD28D0033EB26 /* PersonalInfoMO.swift */,
+				809B4C0B28302BBC00927067 /* SkillsMO.swift */,
 			);
 			path = "Models+CoreData";
 			sourceTree = "<group>";
@@ -372,6 +380,7 @@
 				8061670E282FD6030033EB26 /* LocalDataManager.swift in Sources */,
 				806166FD282FD2680033EB26 /* ResumeMO.swift in Sources */,
 				80616704282FD40A0033EB26 /* DBHelper.swift in Sources */,
+				809B4C0C28302BBC00927067 /* SkillsMO.swift in Sources */,
 				80247EE2282D5FCD000350C6 /* PhotoPicker.swift in Sources */,
 				809B4C032830278900927067 /* Skills.swift in Sources */,
 				80616707282FD43C0033EB26 /* CoreDBHelper.swift in Sources */,
@@ -380,6 +389,7 @@
 				80247EC8282D128D000350C6 /* PersonalInfoView.swift in Sources */,
 				80D6BEAD282EDF1500A429A3 /* db_model_v1.xcdatamodeld in Sources */,
 				80616700282FD28D0033EB26 /* PersonalInfoMO.swift in Sources */,
+				809B4C0F283034D300927067 /* SkillsView.swift in Sources */,
 				806C442D282C20B9003D1A57 /* ContentView.swift in Sources */,
 				808DB344282E66EA00452F5D /* PersonalInfo.swift in Sources */,
 				80247ECD282D2A30000350C6 /* PersonalInfoForm.swift in Sources */,
@@ -395,6 +405,7 @@
 				8061670F282FD6030033EB26 /* LocalDataManager.swift in Sources */,
 				806166FE282FD2680033EB26 /* ResumeMO.swift in Sources */,
 				80616705282FD40A0033EB26 /* DBHelper.swift in Sources */,
+				809B4C0D28302BBC00927067 /* SkillsMO.swift in Sources */,
 				80247EE3282D5FCD000350C6 /* PhotoPicker.swift in Sources */,
 				809B4C042830278900927067 /* Skills.swift in Sources */,
 				80616708282FD43C0033EB26 /* CoreDBHelper.swift in Sources */,
@@ -403,6 +414,7 @@
 				80247EC9282D128D000350C6 /* PersonalInfoView.swift in Sources */,
 				80D6BEAE282EDF1500A429A3 /* db_model_v1.xcdatamodeld in Sources */,
 				80616701282FD28D0033EB26 /* PersonalInfoMO.swift in Sources */,
+				809B4C10283034D300927067 /* SkillsView.swift in Sources */,
 				806C442E282C20B9003D1A57 /* ContentView.swift in Sources */,
 				808DB345282E66EA00452F5D /* PersonalInfo.swift in Sources */,
 				80247ECE282D2A30000350C6 /* PersonalInfoForm.swift in Sources */,

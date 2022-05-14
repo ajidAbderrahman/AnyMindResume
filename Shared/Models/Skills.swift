@@ -8,9 +8,6 @@
 import Foundation
 
 struct Skills {
-    var title: String {
-        "Skills"
-    }
     
     var elements: [String] = []
 }

@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-protocol ContentViewModel {
-    func fetchResumes()
-}
-
 struct ContentView: View {
     @ObservedObject private(set) var viewModel: ViewModel
     
@@ -27,7 +23,7 @@ struct ContentView: View {
                 NavigationLink {
                     ResumeView(viewModel: ResumeView.ViewModel(), resume: Resume())
                 } label: {
-                    Image(systemName: "plus.circle.fill")
+                    Image(systemName: "doc.fill.badge.plus")
                         .resizable()
                 }
                 .frame(width: 40,height: 40, alignment: .trailing)
@@ -44,7 +40,7 @@ struct ContentView: View {
 //MARK: ViewModel
 extension ContentView {
     
-    class ViewModel: ObservableObject, ContentViewModel {
+    class ViewModel: ObservableObject {
         
         @Published var resumes = [Resume]()
         

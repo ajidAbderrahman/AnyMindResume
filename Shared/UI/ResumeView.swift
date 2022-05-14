@@ -7,38 +7,44 @@
 
 import SwiftUI
 
-protocol ResumeViewModel {
-    func addNewResume(_ value: Resume)
-}
-
 struct ResumeView: View {
     @ObservedObject private(set) var viewModel: ViewModel
     @State var resume: Resume
+    
     var body: some View {
         List(resume.sections, id: \.self) { section in
             NavigationLink {
-                PersonalInfoView(personalInfo: $resume.personalInfo)
+                content(section)
             } label: {
-                Text(section)
+                Text(section.rawValue)
                     .padding()
             }
         }
         .navigationTitle("Resume")
-        .toolbar(content: {
-            Button {
-                viewModel.addNewResume(resume)
-            } label: {
-                Text("Save")
+        .toolbar(
+            content: {
+                Button {
+                    viewModel.addNewResume(resume)
+                } label: {
+                    Image(systemName: "square.and.arrow.down.fill")
+                        .resizable()
+                }
             }
-            
-        })
+        )
+    }
+    
+    private func content(_ section: ResumeSection) -> AnyView {
+        switch section {
+        case .personalInfo: return AnyView(PersonalInfoView(personalInfo: $resume.personalInfo))
+        case .skills: return AnyView(SkillsView(skills: $resume.skills))
+        }
     }
 }
 
 //MARK: ViewModel
 extension ResumeView {
     
-    class ViewModel: ObservableObject, ResumeViewModel {
+    class ViewModel: ObservableObject {
         
         private let dataManager: DataManager
         

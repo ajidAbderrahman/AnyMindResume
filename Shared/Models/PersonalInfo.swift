@@ -17,7 +17,4 @@ struct PersonalInfo {
     var yearsOfExperience: String = ""
     var objectives: String = ""
     
-    var title: String {
-        "Personal Info"
-    }
 }
