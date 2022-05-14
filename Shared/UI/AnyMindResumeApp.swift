@@ -12,6 +12,7 @@ struct AnyMindResumeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, CoreDBHelper.shared.context)
         }
     }
 }

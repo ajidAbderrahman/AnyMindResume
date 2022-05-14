@@ -7,21 +7,20 @@
 
 import Foundation
 
-class Resume: ObservableObject {
-    @Published var personalInfo: PersonalInfo = PersonalInfo()
+struct Resume {
+    var title: String
+    var personalInfo: PersonalInfo
+    
     var sections: [String] {
         [personalInfo.title]
     }
 }
 
-extension Resume: CustomStringConvertible {
-    var description: String {
-        """
-        personal Info: \(personalInfo)
-        """
+extension Resume {
+    init() {
+        self.init(
+            title: UUID().uuidString,
+            personalInfo: PersonalInfo()
+        )
     }
-}
-
-protocol ResumeSection {
-    var title: String {get}
 }

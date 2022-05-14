@@ -7,26 +7,17 @@
 
 import Foundation
 
-class PersonalInfo: ResumeSection, ObservableObject {
+struct PersonalInfo {
+    var firstName: String
+    var lastName: String
+    
     var title: String {
         "Personal Info"
     }
-    @Published var firstName: String = ""
-    @Published var lastName: String = ""
-    @Published var mobileNumber: String = ""
-    @Published var emailAddress: String = ""
-    @Published var address: String = ""
-    
 }
 
-extension PersonalInfo: CustomStringConvertible {
-    var description: String {
-        """
-            First Name: \(firstName)\n
-            Last Name: \(lastName)\n
-            Mobile: \(mobileNumber)\n
-            Email: \(emailAddress)\n
-            Address: \(address)
-        """
+extension PersonalInfo {
+    init() {
+        self.init(firstName: "", lastName: "")
     }
 }

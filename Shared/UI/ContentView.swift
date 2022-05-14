@@ -12,14 +12,20 @@ struct ContentView: View {
         NavigationView {
             HStack {
                 NavigationLink {
-                    ResumeView(resume: Resume())
+                    ResumeView(
+                        viewModel: ResumeViewModel(),
+                        resume: Resume()
+                    )
                 } label: {
                     Image(systemName: "plus.circle.fill")
                         .resizable()
                 }
                 Spacer(minLength: 40)
                 NavigationLink {
-                    ResumeView(resume: Resume())
+                    ResumeView(
+                        viewModel: ResumeViewModel(),
+                        resume: Resume()
+                    )
                 } label: {
                     Image(systemName: "pencil.circle.fill")
                         .resizable()

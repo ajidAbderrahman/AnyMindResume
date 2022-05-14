@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct PersonalInfoView: View {
-    @ObservedObject var personalInfo: PersonalInfo
+    @Binding var personalInfo: PersonalInfo
     
     var body: some View {
-        VStack(alignment: .center) {
-            PersonalInfoForm(personalInfo: personalInfo)
+//        VStack(alignment: .center) {
+//            PersonalInfoForm(personalInfo: personalInfo)
+//        }
+        HStack {
+            TextField("First Name", text: $personalInfo.firstName)
+            TextField("Last Name", text: $personalInfo.lastName)
         }
         .navigationTitle("Personal Info")
         .navigationBarTitleDisplayMode(.large)
@@ -22,6 +26,6 @@ struct PersonalInfoView: View {
 
 struct PersonalInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalInfoView(personalInfo: PersonalInfo())
+        PersonalInfoView(personalInfo: Binding<PersonalInfo>.constant(PersonalInfo()))
     }
 }
