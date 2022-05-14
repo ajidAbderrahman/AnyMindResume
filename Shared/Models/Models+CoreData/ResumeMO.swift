@@ -12,6 +12,12 @@ final class ResumeMO: NSManagedObject {
     
     @NSManaged var title: String
     @NSManaged var personalInfo: PersonalInfoMO
+    
+    convenience init(insertInto context: NSManagedObjectContext, resume: Resume) {
+        self.init(entity: ResumeMO.entity(), insertInto: context)
+        title = resume.title
+        personalInfo = PersonalInfoMO(insertInto: context, personalInfo: resume.personalInfo)
+    }
 }
 
 extension ResumeMO {
