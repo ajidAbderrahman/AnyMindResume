@@ -42,13 +42,15 @@ extension LocalDataManager: DataManager {
     }
     
     func addResume(_ value: Resume) {
-        let newResume = ResumeMO(insertInto: dbHelper.context, resume: value)
-        dbHelper.create(newResume)
-    }
-    
-    func updateResume(_ value: Resume) {
-        guard let resumeMO = getResumeMO(for: value.title) else { return }
-        
+        guard let resumeMO = getResumeMO(for: value.title) else {
+            let newResume = ResumeMO(insertInto: dbHelper.context, resume: value)
+            dbHelper.create(newResume)
+            return
+        }
+        resumeMO.personalInfo = PersonalInfoMO(insertInto: dbHelper.context, personalInfo: value.personalInfo)
+        resumeMO.skills = SkillsMO(insertInto: dbHelper.context, skills: value.skills)
+        resumeMO.works = NSSet(array: value.works.map { WorkMO(insertInto: dbHelper.context, work: $0) })
+        dbHelper.update(resumeMO)
     }
     
     func addWork(_ value: Work, resume: String) {
