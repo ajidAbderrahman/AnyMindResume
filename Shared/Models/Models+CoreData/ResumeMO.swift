@@ -20,7 +20,11 @@ final class ResumeMO: NSManagedObject {
         title = resume.title
         personalInfo = PersonalInfoMO(insertInto: context, personalInfo: resume.personalInfo)
         skills = SkillsMO(insertInto: context, skills: resume.skills)
-        works = NSSet(array: resume.works.map { WorkMO(insertInto: context, work: $0) })
+        works = NSSet(array: resume.works.map { work in
+            let workMO = WorkMO(insertInto: context, work: work)
+            workMO.addToWork(self)
+            return workMO
+        })
     }
 }
 

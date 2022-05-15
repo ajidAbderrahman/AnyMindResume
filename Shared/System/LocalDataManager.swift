@@ -4,8 +4,7 @@
 //
 //  Created by Abderrahman Ajid on 14/5/2022.
 //
-
-import Foundation
+import CoreData
 
 class LocalDataManager {
     
@@ -15,11 +14,8 @@ class LocalDataManager {
     
     private init() { }
     
-    private func getResumeMO(for resume: String) -> ResumeMO? {
-        let predicate = NSPredicate(
-            format: "title = %@",
-            resume as CVarArg)
-        let result = dbHelper.fetchFirst(ResumeMO.self, predicate: predicate)
+    private func getObjectMO<T: NSManagedObject>(for predicate: NSPredicate) -> T? {
+        let result = dbHelper.fetchFirst(T.self, predicate: predicate)
         switch result {
         case .success(let resumeMO):
             return resumeMO
@@ -42,20 +38,27 @@ extension LocalDataManager: DataManager {
     }
     
     func addResume(_ value: Resume) {
-        guard let resumeMO = getResumeMO(for: value.title) else {
+        guard let resumeMO: ResumeMO = getObjectMO(for: NSPredicate(format: "title = %@", value.title as CVarArg)) else {
             let newResume = ResumeMO(insertInto: dbHelper.context, resume: value)
             dbHelper.create(newResume)
             return
         }
+        
+        value.works.forEach { work in
+            
+            let workMO: WorkMO? = getObjectMO(for: NSPredicate(format: "name = %@", work.name as CVarArg))
+            if let workMO = workMO {
+                guard let resumes = workMO.resumes as? Set<ResumeMO>, !resumes.contains(resumeMO) else {
+                    return
+                }
+                workMO.addToWork(resumeMO)
+            } else {
+                resumeMO.addToWorks(WorkMO(insertInto: dbHelper.context, work: work))
+            }
+            
+        }
         resumeMO.personalInfo = PersonalInfoMO(insertInto: dbHelper.context, personalInfo: value.personalInfo)
         resumeMO.skills = SkillsMO(insertInto: dbHelper.context, skills: value.skills)
-        resumeMO.works = NSSet(array: value.works.map { WorkMO(insertInto: dbHelper.context, work: $0) })
-        dbHelper.update(resumeMO)
-    }
-    
-    func addWork(_ value: Work, resume: String) {
-        guard let resumeMO = getResumeMO(for: resume) else { return }
-        resumeMO.addToWorks(WorkMO(insertInto: dbHelper.context, work: value))
         dbHelper.update(resumeMO)
     }
 }
