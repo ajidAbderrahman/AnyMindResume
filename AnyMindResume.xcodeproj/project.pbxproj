@@ -14,8 +14,8 @@
 		80247ECB282D1323000350C6 /* PersonalInfoViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247ECA282D1323000350C6 /* PersonalInfoViewTest.swift */; };
 		80247ECD282D2A30000350C6 /* PersonalInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247ECC282D2A30000350C6 /* PersonalInfoForm.swift */; };
 		80247ECE282D2A30000350C6 /* PersonalInfoForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247ECC282D2A30000350C6 /* PersonalInfoForm.swift */; };
-		80247EE2282D5FCD000350C6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247EE1282D5FCD000350C6 /* PhotoPicker.swift */; };
-		80247EE3282D5FCD000350C6 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247EE1282D5FCD000350C6 /* PhotoPicker.swift */; };
+		80247EE2282D5FCD000350C6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247EE1282D5FCD000350C6 /* ImagePicker.swift */; };
+		80247EE3282D5FCD000350C6 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247EE1282D5FCD000350C6 /* ImagePicker.swift */; };
 		80247EE5282D6D9D000350C6 /* ResumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247EE4282D6D9D000350C6 /* ResumeView.swift */; };
 		80247EE6282D6D9D000350C6 /* ResumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80247EE4282D6D9D000350C6 /* ResumeView.swift */; };
 		806166FD282FD2680033EB26 /* ResumeMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806166FC282FD2680033EB26 /* ResumeMO.swift */; };
@@ -30,6 +30,8 @@
 		8061670C282FD4DA0033EB26 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061670A282FD4DA0033EB26 /* DataManager.swift */; };
 		8061670E282FD6030033EB26 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061670D282FD6030033EB26 /* LocalDataManager.swift */; };
 		8061670F282FD6030033EB26 /* LocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061670D282FD6030033EB26 /* LocalDataManager.swift */; };
+		806567072830F4A2004256BA /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806567062830F4A2004256BA /* ImagePickerView.swift */; };
+		806567082830F4A2004256BA /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806567062830F4A2004256BA /* ImagePickerView.swift */; };
 		806C442B282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442C282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442D282C20B9003D1A57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4404282C20B7003D1A57 /* ContentView.swift */; };
@@ -65,7 +67,7 @@
 		80247EC7282D128D000350C6 /* PersonalInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoView.swift; sourceTree = "<group>"; };
 		80247ECA282D1323000350C6 /* PersonalInfoViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewTest.swift; sourceTree = "<group>"; };
 		80247ECC282D2A30000350C6 /* PersonalInfoForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoForm.swift; sourceTree = "<group>"; };
-		80247EE1282D5FCD000350C6 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		80247EE1282D5FCD000350C6 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		80247EE4282D6D9D000350C6 /* ResumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeView.swift; sourceTree = "<group>"; };
 		806166FC282FD2680033EB26 /* ResumeMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeMO.swift; sourceTree = "<group>"; };
 		806166FF282FD28D0033EB26 /* PersonalInfoMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoMO.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 		80616706282FD43C0033EB26 /* CoreDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDBHelper.swift; sourceTree = "<group>"; };
 		8061670A282FD4DA0033EB26 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8061670D282FD6030033EB26 /* LocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataManager.swift; sourceTree = "<group>"; };
+		806567062830F4A2004256BA /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyMindResumeApp.swift; sourceTree = "<group>"; };
 		806C4404282C20B7003D1A57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		806C4405282C20B9003D1A57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 				80247EC6282D126B000350C6 /* Personal Info */,
 				80247EE4282D6D9D000350C6 /* ResumeView.swift */,
 				809B4C0E283034D300927067 /* SkillsView.swift */,
+				806567062830F4A2004256BA /* ImagePickerView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -202,7 +206,7 @@
 				80247EC0282D0D81000350C6 /* Models */,
 				80247EC4282D0DF3000350C6 /* UI */,
 				80247EC5282D0E32000350C6 /* Resources */,
-				80247EE1282D5FCD000350C6 /* PhotoPicker.swift */,
+				80247EE1282D5FCD000350C6 /* ImagePicker.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -381,7 +385,7 @@
 				806166FD282FD2680033EB26 /* ResumeMO.swift in Sources */,
 				80616704282FD40A0033EB26 /* DBHelper.swift in Sources */,
 				809B4C0C28302BBC00927067 /* SkillsMO.swift in Sources */,
-				80247EE2282D5FCD000350C6 /* PhotoPicker.swift in Sources */,
+				80247EE2282D5FCD000350C6 /* ImagePicker.swift in Sources */,
 				809B4C032830278900927067 /* Skills.swift in Sources */,
 				80616707282FD43C0033EB26 /* CoreDBHelper.swift in Sources */,
 				80247EC2282D0D9E000350C6 /* Resume.swift in Sources */,
@@ -394,6 +398,7 @@
 				808DB344282E66EA00452F5D /* PersonalInfo.swift in Sources */,
 				80247ECD282D2A30000350C6 /* PersonalInfoForm.swift in Sources */,
 				806C442B282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */,
+				806567072830F4A2004256BA /* ImagePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,7 +411,7 @@
 				806166FE282FD2680033EB26 /* ResumeMO.swift in Sources */,
 				80616705282FD40A0033EB26 /* DBHelper.swift in Sources */,
 				809B4C0D28302BBC00927067 /* SkillsMO.swift in Sources */,
-				80247EE3282D5FCD000350C6 /* PhotoPicker.swift in Sources */,
+				80247EE3282D5FCD000350C6 /* ImagePicker.swift in Sources */,
 				809B4C042830278900927067 /* Skills.swift in Sources */,
 				80616708282FD43C0033EB26 /* CoreDBHelper.swift in Sources */,
 				80247EC3282D0D9E000350C6 /* Resume.swift in Sources */,
@@ -419,6 +424,7 @@
 				808DB345282E66EA00452F5D /* PersonalInfo.swift in Sources */,
 				80247ECE282D2A30000350C6 /* PersonalInfoForm.swift in Sources */,
 				806C442C282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */,
+				806567082830F4A2004256BA /* ImagePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
