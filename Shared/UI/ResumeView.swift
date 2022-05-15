@@ -10,6 +10,7 @@ import SwiftUI
 struct ResumeView: View {
     @ObservedObject private(set) var viewModel: ViewModel
     @State var resume: Resume
+    @State private var item: ActivityItem?
     var body: some View {
         List(resume.sections, id: \.self) { section in
             NavigationLink {
@@ -22,14 +23,25 @@ struct ResumeView: View {
         .navigationTitle("Resume")
         .toolbar(
             content: {
-                Button {
-                    viewModel.addNewResume(resume)
-                } label: {
-                    Image(systemName: "square.and.arrow.down.fill")
-                        .resizable()
+                HStack {
+                    Button {
+                        viewModel.addNewResume(resume)
+                    } label: {
+                        Text("Add")
+                    }
+                    Button {
+                        item = ActivityItem(
+                            items: ResumePDFCreator(resume)
+                                .resumePDF?
+                                .dataRepresentation()
+                        )
+                    } label: {
+                        Text("Share")
+                    }
                 }
             }
         )
+        .activitySheet($item)
     }
     
     private func content(_ section: ResumeSection) -> AnyView {
