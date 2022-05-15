@@ -22,7 +22,7 @@ extension LocalDataManager: DataManager {
         let result: Result<[ResumeMO], Error> = dbHelper.fetch(ResumeMO.self)
         switch result {
         case .success(let resumeMOs):
-            return resumeMOs.map { $0.convertToResume() }
+            return resumeMOs.map { $0.toPresentationModel }
         case .failure(let error):
             fatalError(error.localizedDescription)
         }

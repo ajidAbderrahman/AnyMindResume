@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import UIKit
 
 @objc(PersonalInfoMO)
 final class PersonalInfoMO: NSManagedObject {
@@ -17,6 +18,7 @@ final class PersonalInfoMO: NSManagedObject {
     @NSManaged var address: String
     @NSManaged var yearsOfExperience: Double
     @NSManaged var objectives: String
+    @NSManaged public var imageData: Data?
     
     convenience init(insertInto context: NSManagedObjectContext, personalInfo: PersonalInfo) {
         self.init(entity: PersonalInfoMO.entity(), insertInto: context)
@@ -27,12 +29,17 @@ final class PersonalInfoMO: NSManagedObject {
         address = personalInfo.address
         yearsOfExperience = Double(personalInfo.yearsOfExperience) ?? 0
         objectives = personalInfo.objectives
+        imageData = personalInfo.image?.jpegData(compressionQuality: 0.0)
     }
 }
 
 extension PersonalInfoMO {
-    func convertToPersonalInfo() -> PersonalInfo {
-        PersonalInfo(
+    
+    var toPresentationModel: PersonalInfo {
+        let image: UIImage? = imageData != nil ? UIImage(data: imageData!) : nil
+        
+        return PersonalInfo(
+            image: image,
             firstName: firstName,
             lastName: lastName,
             mobile: mobile,

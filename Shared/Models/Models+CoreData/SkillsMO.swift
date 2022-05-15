@@ -19,7 +19,7 @@ final class SkillsMO: NSManagedObject {
 }
 
 extension SkillsMO {
-    func convertToSkills() -> Skills {
+    var toPresentationModel: Skills {
         Skills(elements: elements)
     }
 }

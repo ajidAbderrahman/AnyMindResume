@@ -23,11 +23,11 @@ final class ResumeMO: NSManagedObject {
 }
 
 extension ResumeMO {
-    func convertToResume() -> Resume {
+    var toPresentationModel: Resume {
         Resume(
             title: title,
-            personalInfo: personalInfo.convertToPersonalInfo(),
-            skills: skills.convertToSkills()
+            personalInfo: personalInfo.toPresentationModel,
+            skills: skills.toPresentationModel
         )
     }
 }
