@@ -19,6 +19,10 @@ struct PersonalInfo {
     var yearsOfExperience: String
     var objectives: String
     
+    var fullName: String {
+        "\(firstName) \(lastName)"
+    }
+    
 }
 
 extension PersonalInfo {

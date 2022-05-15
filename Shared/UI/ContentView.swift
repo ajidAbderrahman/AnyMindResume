@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject private(set) var viewModel: ViewModel
-    
+    @State private var item: ActivityItem?
     var body: some View {
         NavigationView {
             VStack(alignment: .trailing) {
@@ -18,6 +18,19 @@ struct ContentView: View {
                         ResumeView(viewModel: ResumeView.ViewModel(), resume: resume)
                     } label: {
                         Text(resume.title)
+                    }
+                    .swipeActions {
+                        Button {
+                            item = ActivityItem(
+                                items: ResumePDFCreator(resume)
+                                    .resumePDF?
+                                    .dataRepresentation()
+                            )
+                        } label: {
+                            Image(systemName: "square.and.arrow.up.fill")
+                                .resizable()
+                        }
+                        .frame(width: 40, height: 40, alignment: .leading)
                     }
                 }
                 NavigationLink {
@@ -32,6 +45,7 @@ struct ContentView: View {
             .onAppear {
                 viewModel.fetchResumes()
             }
+            .activitySheet($item)
             .navigationTitle("Resumes")
         }
     }
