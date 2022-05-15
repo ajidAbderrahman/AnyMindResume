@@ -181,6 +181,7 @@
 		80616709282FD4670033EB26 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				80247EE1282D5FCD000350C6 /* ImagePicker.swift */,
 				8061670A282FD4DA0033EB26 /* DataManager.swift */,
 				8061670D282FD6030033EB26 /* LocalDataManager.swift */,
 			);
@@ -206,7 +207,6 @@
 				80247EC0282D0D81000350C6 /* Models */,
 				80247EC4282D0DF3000350C6 /* UI */,
 				80247EC5282D0E32000350C6 /* Resources */,
-				80247EE1282D5FCD000350C6 /* ImagePicker.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
