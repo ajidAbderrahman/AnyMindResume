@@ -14,6 +14,7 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="personalInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonalInfo"/>
         <relationship name="skills" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Skills"/>
+        <relationship name="works" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Work" inverseName="resumes" inverseEntity="Work"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="title"/>
@@ -23,9 +24,14 @@
     <entity name="Skills" representedClassName="SkillsMO" syncable="YES">
         <attribute name="elements" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
     </entity>
+    <entity name="Work" representedClassName="WorkMO" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="resumes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Resume" inverseName="works" inverseEntity="Resume"/>
+    </entity>
     <elements>
         <element name="PersonalInfo" positionX="-13.36346435546875" positionY="5.341583251953125" width="128" height="149"/>
-        <element name="Resume" positionX="-203.2980346679688" positionY="-108.080078125" width="128" height="88"/>
+        <element name="Resume" positionX="-203.2980346679688" positionY="-108.080078125" width="128" height="89"/>
         <element name="Skills" positionX="-99" positionY="9" width="128" height="44"/>
+        <element name="Work" positionX="-90" positionY="27" width="128" height="59"/>
     </elements>
 </model>

@@ -36,6 +36,7 @@ struct ResumeView: View {
         switch section {
         case .personalInfo: return AnyView(PersonalInfoView(personalInfo: $resume.personalInfo))
         case .skills: return AnyView(SkillsView(skills: $resume.skills))
+        case .works: return AnyView(WorksView(viewModel: WorksView.ViewModel(resumeTitle: resume.title), works: $resume.works))
         }
     }
 }

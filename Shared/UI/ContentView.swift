@@ -52,6 +52,7 @@ extension ContentView {
         
         func fetchResumes() {
             resumes = dataManager.fetchResumeList()
+            
         }
     }
 }

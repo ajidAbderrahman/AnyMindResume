@@ -15,6 +15,19 @@ class LocalDataManager {
     
     private init() { }
     
+    private func getResumeMO(for resume: String) -> ResumeMO? {
+        let predicate = NSPredicate(
+            format: "title = %@",
+            resume as CVarArg)
+        let result = dbHelper.fetchFirst(ResumeMO.self, predicate: predicate)
+        switch result {
+        case .success(let resumeMO):
+            return resumeMO
+        case .failure(_):
+            return nil
+        }
+    }
+    
 }
 
 extension LocalDataManager: DataManager {
@@ -31,5 +44,16 @@ extension LocalDataManager: DataManager {
     func addResume(_ value: Resume) {
         let newResume = ResumeMO(insertInto: dbHelper.context, resume: value)
         dbHelper.create(newResume)
+    }
+    
+    func updateResume(_ value: Resume) {
+        guard let resumeMO = getResumeMO(for: value.title) else { return }
+        
+    }
+    
+    func addWork(_ value: Work, resume: String) {
+        guard let resumeMO = getResumeMO(for: resume) else { return }
+        resumeMO.addToWorks(WorkMO(insertInto: dbHelper.context, work: value))
+        dbHelper.update(resumeMO)
     }
 }
