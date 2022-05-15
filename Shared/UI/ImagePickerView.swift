@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ImagePickerView: View {
     
-    @State var showImagePicker: Bool = false
-    @State var image: UIImage?
+    @State private var showImagePicker: Bool = false
+    @Binding var image: UIImage?
     
     var body: some View {
         Button {
@@ -39,6 +39,6 @@ struct ImagePickerView: View {
 
 struct ImagePickerView_Previews: PreviewProvider {
     static var previews: some View {
-        ImagePickerView()
+        ImagePickerView(image: Binding<UIImage?>.constant(nil))
     }
 }

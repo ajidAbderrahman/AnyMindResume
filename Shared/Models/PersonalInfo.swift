@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 struct PersonalInfo {
     
+    var image: UIImage?
     var firstName: String
     var lastName: String
     var mobile: String
@@ -24,6 +26,7 @@ extension PersonalInfo {
     init() {
         
         self.init(
+            image: nil,
             firstName: "",
             lastName: "",
             mobile: "",

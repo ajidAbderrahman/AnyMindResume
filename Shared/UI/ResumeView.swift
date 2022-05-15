@@ -10,7 +10,6 @@ import SwiftUI
 struct ResumeView: View {
     @ObservedObject private(set) var viewModel: ViewModel
     @State var resume: Resume
-    
     var body: some View {
         List(resume.sections, id: \.self) { section in
             NavigationLink {

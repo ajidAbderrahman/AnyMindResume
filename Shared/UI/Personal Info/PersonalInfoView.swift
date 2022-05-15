@@ -12,7 +12,7 @@ struct PersonalInfoView: View {
     
     var body: some View {
         VStack {
-            ImagePickerView()
+            ImagePickerView(image: $personalInfo.image)
             PersonalInfoForm(personalInfo: $personalInfo)
         }
         .navigationTitle("Personal Info")
