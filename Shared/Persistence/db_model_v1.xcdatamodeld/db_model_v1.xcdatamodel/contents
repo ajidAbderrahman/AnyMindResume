@@ -9,10 +9,16 @@
         <attribute name="mobile" optional="YES" attributeType="String"/>
         <attribute name="objectives" optional="YES" attributeType="String"/>
         <attribute name="yearsOfExperience" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="resume" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Resume" inverseName="personalInfo" inverseEntity="Resume"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="mobile"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Resume" representedClassName="ResumeMO" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="personalInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PersonalInfo"/>
+        <relationship name="personalInfo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PersonalInfo" inverseName="resume" inverseEntity="PersonalInfo"/>
         <relationship name="skills" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Skills"/>
         <relationship name="works" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Work" inverseName="resumes" inverseEntity="Work"/>
         <uniquenessConstraints>
@@ -27,9 +33,14 @@
     <entity name="Work" representedClassName="WorkMO" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="resumes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Resume" inverseName="works" inverseEntity="Resume"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="PersonalInfo" positionX="-13.36346435546875" positionY="5.341583251953125" width="128" height="149"/>
+        <element name="PersonalInfo" positionX="-13.36346435546875" positionY="5.341583251953125" width="128" height="164"/>
         <element name="Resume" positionX="-203.2980346679688" positionY="-108.080078125" width="128" height="89"/>
         <element name="Skills" positionX="-99" positionY="9" width="128" height="44"/>
         <element name="Work" positionX="-90" positionY="27" width="128" height="59"/>

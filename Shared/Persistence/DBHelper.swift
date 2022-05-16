@@ -14,6 +14,5 @@ protocol DBHelper {
     func create(_ object: ObjectType)
     func fetchFirst(_ objectType: ObjectType.Type, predicate: PredicateType?) -> Result<ObjectType?, Error>
     func fetch(_ objectType: ObjectType.Type) -> Result<[ObjectType], Error>
-    func update(_ object: ObjectType)
     func delete(_ object: ObjectType)
 }

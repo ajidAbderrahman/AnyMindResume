@@ -38,27 +38,32 @@ extension LocalDataManager: DataManager {
     }
     
     func addResume(_ value: Resume) {
-        guard let resumeMO: ResumeMO = getObjectMO(for: NSPredicate(format: "title = %@", value.title as CVarArg)) else {
-            let newResume = ResumeMO(insertInto: dbHelper.context, resume: value)
-            dbHelper.create(newResume)
-            return
-        }
         
-        value.works.forEach { work in
-            
-            let workMO: WorkMO? = getObjectMO(for: NSPredicate(format: "name = %@", work.name as CVarArg))
-            if let workMO = workMO {
-                guard let resumes = workMO.resumes as? Set<ResumeMO>, !resumes.contains(resumeMO) else {
-                    return
-                }
-                workMO.addToWork(resumeMO)
-            } else {
-                resumeMO.addToWorks(WorkMO(insertInto: dbHelper.context, work: work))
-            }
-            
-        }
-        resumeMO.personalInfo = PersonalInfoMO(insertInto: dbHelper.context, personalInfo: value.personalInfo)
-        resumeMO.skills = SkillsMO(insertInto: dbHelper.context, skills: value.skills)
-        dbHelper.update(resumeMO)
+        
+        let newResume = ResumeMO(insertInto: dbHelper.context, resume: value)
+        dbHelper.create(newResume)
+        
+        
+//        guard let resumeMO: ResumeMO = getObjectMO(for: NSPredicate(format: "title = %@", value.title as CVarArg)) else {
+//            let newResume = ResumeMO(insertInto: dbHelper.context, resume: value)
+//            dbHelper.create(newResume)
+//            return
+//        }
+//
+//        value.works.forEach { work in
+//            let workMO: WorkMO? = getObjectMO(for: NSPredicate(format: "name = %@", work.name as CVarArg))
+//            if let workMO = workMO {
+//                guard let resumes = workMO.resumes as? Set<ResumeMO>, !resumes.contains(resumeMO) else {
+//                    return
+//                }
+//                workMO.addToWork(resumeMO)
+//            } else {
+//                resumeMO.addToWorks(WorkMO(insertInto: dbHelper.context, work: work))
+//            }
+//        }
+//
+//        //resumeMO.personalInfo = PersonalInfoMO(insertInto: dbHelper.context, personalInfo: value.personalInfo)
+//        resumeMO.skills = SkillsMO(insertInto: dbHelper.context, skills: value.skills)
+//        dbHelper.update(resumeMO)
     }
 }

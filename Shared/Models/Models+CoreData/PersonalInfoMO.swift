@@ -18,7 +18,8 @@ final class PersonalInfoMO: NSManagedObject {
     @NSManaged var address: String
     @NSManaged var yearsOfExperience: Double
     @NSManaged var objectives: String
-    @NSManaged public var imageData: Data?
+    @NSManaged var imageData: Data?
+    @NSManaged var resume: ResumeMO?
     
     convenience init(insertInto context: NSManagedObjectContext, personalInfo: PersonalInfo) {
         self.init(entity: PersonalInfoMO.entity(), insertInto: context)

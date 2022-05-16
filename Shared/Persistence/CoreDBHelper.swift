@@ -14,6 +14,7 @@ class CoreDBHelper {
     
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "db_model_v1")
+        container.viewContext.mergePolicy = NSMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -64,14 +65,6 @@ extension CoreDBHelper: DBHelper {
             return .success(result as? [T] ?? [])
         } catch {
             return .failure(error)
-        }
-    }
-    
-    func update(_ object: NSManagedObject) {
-        do {
-            try context.save()
-        } catch {
-            fatalError(error.localizedDescription)
         }
     }
     
