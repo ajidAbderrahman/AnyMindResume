@@ -14,7 +14,7 @@ struct WorksView: View {
             List {
                 ForEach(works.indices, id: \.self) { index in
                     VStack {
-                        TextField("Company", text: $works[index].name)
+                        TextField("Company Name", text: $works[index].name)
                             .textFieldStyle(.roundedBorder)
                         DatePicker("Start Date", selection: $works[index].startDate, displayedComponents: .date)
                         DatePicker("End Date", selection: $works[index].endDate, displayedComponents: .date)

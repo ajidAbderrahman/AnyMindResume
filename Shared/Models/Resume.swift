@@ -11,6 +11,7 @@ enum ResumeSection: String, CaseIterable {
     case personalInfo = "Personal Info"
     case skills = "Skills"
     case works = "Works"
+    case educations = "Educations"
 }
 
 struct Resume {
@@ -18,6 +19,7 @@ struct Resume {
     var personalInfo: PersonalInfo
     var skills: [Skill]
     var works: [Work]
+    var educations: [Education]
     
     var sections: [ResumeSection] {
         ResumeSection.allCases
@@ -31,7 +33,8 @@ extension Resume {
             title: UUID().uuidString,
             personalInfo: PersonalInfo(),
             skills: [],
-            works: []
+            works: [],
+            educations: []
         )
     }
 }
