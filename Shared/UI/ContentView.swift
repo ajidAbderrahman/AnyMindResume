@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject private(set) var viewModel: ViewModel
-    
     var body: some View {
         NavigationView {
             VStack(alignment: .trailing) {

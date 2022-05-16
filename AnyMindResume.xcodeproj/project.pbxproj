@@ -38,6 +38,14 @@
 		806185962831AB9B00DCB09C /* WorksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806185942831AB9B00DCB09C /* WorksView.swift */; };
 		806567072830F4A2004256BA /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806567062830F4A2004256BA /* ImagePickerView.swift */; };
 		806567082830F4A2004256BA /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806567062830F4A2004256BA /* ImagePickerView.swift */; };
+		8065671028311B0A004256BA /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065670F28311B0A004256BA /* PDFCreator.swift */; };
+		8065671128311B0A004256BA /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065670F28311B0A004256BA /* PDFCreator.swift */; };
+		80656713283120F0004256BA /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80656712283120F0004256BA /* ActivityView.swift */; };
+		80656714283120F0004256BA /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80656712283120F0004256BA /* ActivityView.swift */; };
+		8065671628312177004256BA /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671528312177004256BA /* ActivityItem.swift */; };
+		8065671728312177004256BA /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671528312177004256BA /* ActivityItem.swift */; };
+		8065671C28315C99004256BA /* ResumePDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671B28315C99004256BA /* ResumePDFCreator.swift */; };
+		8065671D28315C99004256BA /* ResumePDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671B28315C99004256BA /* ResumePDFCreator.swift */; };
 		806C442B282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442C282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442D282C20B9003D1A57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4404282C20B7003D1A57 /* ContentView.swift */; };
@@ -85,6 +93,10 @@
 		8061858E2831A9FA00DCB09C /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
 		806185942831AB9B00DCB09C /* WorksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksView.swift; sourceTree = "<group>"; };
 		806567062830F4A2004256BA /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		8065670F28311B0A004256BA /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
+		80656712283120F0004256BA /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		8065671528312177004256BA /* ActivityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
+		8065671B28315C99004256BA /* ResumePDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumePDFCreator.swift; sourceTree = "<group>"; };
 		806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyMindResumeApp.swift; sourceTree = "<group>"; };
 		806C4404282C20B7003D1A57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		806C4405282C20B9003D1A57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,14 +202,50 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
-		80616709282FD4670033EB26 /* System */ = {
+		80616709282FD4670033EB26 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8065671E28315CB0004256BA /* PDFCreator */,
+				8065671A28312246004256BA /* DataManager */,
+				8065671928312223004256BA /* UI */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		80656718283121BE004256BA /* ActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				80656712283120F0004256BA /* ActivityView.swift */,
+				8065671528312177004256BA /* ActivityItem.swift */,
+			);
+			path = ActivityView;
+			sourceTree = "<group>";
+		};
+		8065671928312223004256BA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				80656718283121BE004256BA /* ActivityView */,
 				80247EE1282D5FCD000350C6 /* ImagePicker.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8065671A28312246004256BA /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
 				8061670A282FD4DA0033EB26 /* DataManager.swift */,
 				8061670D282FD6030033EB26 /* LocalDataManager.swift */,
 			);
-			path = System;
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		8065671E28315CB0004256BA /* PDFCreator */ = {
+			isa = PBXGroup;
+			children = (
+				8065671B28315C99004256BA /* ResumePDFCreator.swift */,
+				8065670F28311B0A004256BA /* PDFCreator.swift */,
+			);
+			path = PDFCreator;
 			sourceTree = "<group>";
 		};
 		806C43FD282C20B7003D1A57 = {
@@ -214,7 +262,7 @@
 		806C4402282C20B7003D1A57 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				80616709282FD4670033EB26 /* System */,
+				80616709282FD4670033EB26 /* Utilities */,
 				80616702282FD37B0033EB26 /* Persistence */,
 				80247EC0282D0D81000350C6 /* Models */,
 				80247EC4282D0DF3000350C6 /* UI */,
@@ -402,9 +450,12 @@
 				809B4C032830278900927067 /* Skill.swift in Sources */,
 				80616707282FD43C0033EB26 /* CoreDBHelper.swift in Sources */,
 				80247EC2282D0D9E000350C6 /* Resume.swift in Sources */,
+				8065671028311B0A004256BA /* PDFCreator.swift in Sources */,
 				80247EE5282D6D9D000350C6 /* ResumeView.swift in Sources */,
+				80656713283120F0004256BA /* ActivityView.swift in Sources */,
 				80247EC8282D128D000350C6 /* PersonalInfoView.swift in Sources */,
 				80D6BEAD282EDF1500A429A3 /* db_model_v1.xcdatamodeld in Sources */,
+				8065671C28315C99004256BA /* ResumePDFCreator.swift in Sources */,
 				80616700282FD28D0033EB26 /* PersonalInfoMO.swift in Sources */,
 				8061858C2831A9A700DCB09C /* WorkMO.swift in Sources */,
 				809B4C0F283034D300927067 /* SkillsView.swift in Sources */,
@@ -414,6 +465,7 @@
 				806C442B282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */,
 				806567072830F4A2004256BA /* ImagePickerView.swift in Sources */,
 				806185952831AB9B00DCB09C /* WorksView.swift in Sources */,
+				8065671628312177004256BA /* ActivityItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,9 +484,12 @@
 				806185902831A9FA00DCB09C /* Work.swift in Sources */,
 				80616708282FD43C0033EB26 /* CoreDBHelper.swift in Sources */,
 				80247EC3282D0D9E000350C6 /* Resume.swift in Sources */,
+				8065671128311B0A004256BA /* PDFCreator.swift in Sources */,
 				80247EE6282D6D9D000350C6 /* ResumeView.swift in Sources */,
+				80656714283120F0004256BA /* ActivityView.swift in Sources */,
 				80247EC9282D128D000350C6 /* PersonalInfoView.swift in Sources */,
 				80D6BEAE282EDF1500A429A3 /* db_model_v1.xcdatamodeld in Sources */,
+				8065671D28315C99004256BA /* ResumePDFCreator.swift in Sources */,
 				80616701282FD28D0033EB26 /* PersonalInfoMO.swift in Sources */,
 				809B4C10283034D300927067 /* SkillsView.swift in Sources */,
 				806C442E282C20B9003D1A57 /* ContentView.swift in Sources */,
@@ -443,6 +498,7 @@
 				806C442C282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */,
 				806567082830F4A2004256BA /* ImagePickerView.swift in Sources */,
 				806185962831AB9B00DCB09C /* WorksView.swift in Sources */,
+				8065671728312177004256BA /* ActivityItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
