@@ -19,7 +19,7 @@
     <entity name="Resume" representedClassName="ResumeMO" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="personalInfo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PersonalInfo" inverseName="resume" inverseEntity="PersonalInfo"/>
-        <relationship name="skills" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Skills"/>
+        <relationship name="skills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Skill" inverseName="resumes" inverseEntity="Skill"/>
         <relationship name="works" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Work" inverseName="resumes" inverseEntity="Work"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
@@ -27,8 +27,14 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
-    <entity name="Skills" representedClassName="SkillsMO" syncable="YES">
-        <attribute name="elements" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+    <entity name="Skill" representedClassName="SkillMO" syncable="YES">
+        <attribute name="name" attributeType="String" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="[String]"/>
+        <relationship name="resumes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Resume" inverseName="skills" inverseEntity="Resume"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Work" representedClassName="WorkMO" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -42,7 +48,7 @@
     <elements>
         <element name="PersonalInfo" positionX="-13.36346435546875" positionY="5.341583251953125" width="128" height="164"/>
         <element name="Resume" positionX="-203.2980346679688" positionY="-108.080078125" width="128" height="89"/>
-        <element name="Skills" positionX="-99" positionY="9" width="128" height="44"/>
+        <element name="Skill" positionX="-99" positionY="9" width="128" height="59"/>
         <element name="Work" positionX="-90" positionY="27" width="128" height="59"/>
     </elements>
 </model>

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SkillsView: View {
-    @Binding var skills: Skills
-    @State private var skill = ""
+    @Binding var skills: [Skill]
+    @State private var skillName = ""
     var body: some View {
         VStack {
             HStack {
-                TextField("Skill", text: $skill)
+                TextField("Skill", text: $skillName)
                     .onSubmit {
                         addSkill()
                     }
@@ -28,11 +28,11 @@ struct SkillsView: View {
             }
             .padding()
             List {
-                ForEach(skills.elements,id: \.self) { skill in
-                    Text(skill)
+                ForEach(skills, id: \.name) { skill in
+                    Text(skill.name)
                 }
                 .onDelete {
-                    skills.elements.remove(atOffsets: $0)
+                    skills.remove(atOffsets: $0)
                 }
                 .onMove(perform: move)
             }
@@ -44,18 +44,18 @@ struct SkillsView: View {
     }
     
     private func move(from source: IndexSet, to destination: Int) {
-        skills.elements.move(fromOffsets: source, toOffset: destination)
+        skills.move(fromOffsets: source, toOffset: destination)
         }
     
     private func addSkill() {
-        guard !skill.isEmpty else { return }
-        skills.elements.append(skill)
-        skill = ""
+        guard !skillName.isEmpty else { return }
+        skills.append(Skill(name: skillName))
+        skillName = ""
     }
 }
 
 struct SkillsView_Previews: PreviewProvider {
     static var previews: some View {
-        SkillsView(skills: Binding<Skills>.constant(Skills()))
+        SkillsView(skills: Binding<[Skill]>.constant([]))
     }
 }

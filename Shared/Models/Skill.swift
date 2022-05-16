@@ -1,5 +1,5 @@
 //
-//  Skills.swift
+//  Skill.swift
 //  AnyMindResume
 //
 //  Created by Abderrahman Ajid on 14/5/2022.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Skills {
+struct Skill {
     
-    var elements: [String]
+    var name: String
 }
 
-extension Skills {
+extension Skill {
     
     init() {
-        self.init(elements: [])
+        self.init(name: "")
     }
 }

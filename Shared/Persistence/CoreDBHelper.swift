@@ -46,18 +46,6 @@ extension CoreDBHelper: DBHelper {
         }
     }
     
-    func fetchFirst<T: NSManagedObject>(_ objectType: T.Type, predicate: NSPredicate?) -> Result<T?, Error> {
-        let request = objectType.fetchRequest()
-        request.predicate = predicate
-        request.fetchLimit = 1
-        do {
-            let result = try context.fetch(request) as? [T]
-            return .success(result?.first)
-        } catch {
-            return .failure(error)
-        }
-    }
-    
     func fetch<T: NSManagedObject>(_ objectType: T.Type) -> Result<[T], Error> {
         let request = objectType.fetchRequest()
         do {

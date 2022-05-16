@@ -19,24 +19,6 @@ final class WorkMO: NSManagedObject {
     }
 }
 
-// MARK: Generated accessors for work
-extension WorkMO {
-
-    @objc(addWorkObject:)
-    @NSManaged public func addToWork(_ value: ResumeMO)
-
-    @objc(removeWorkObject:)
-    @NSManaged public func removeFromWork(_ value: ResumeMO)
-
-    @objc(addWork:)
-    @NSManaged public func addToWork(_ values: NSSet)
-
-    @objc(removeWork:)
-    @NSManaged public func removeFromWork(_ values: NSSet)
-
-}
-
-
 extension WorkMO {
     var toPresentationModel: Work {
         Work(
