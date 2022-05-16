@@ -35,6 +35,7 @@ struct WorksView: View {
                     } label: {
                         Text("Add")
                     }
+                    EditButton()
                 }
             }
         )

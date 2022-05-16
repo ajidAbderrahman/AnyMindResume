@@ -37,6 +37,7 @@ struct EducationsView: View {
                     } label: {
                         Text("Add")
                     }
+                    EditButton()
                 }
             }
         )

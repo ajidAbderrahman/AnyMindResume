@@ -15,6 +15,7 @@ final class ResumeMO: NSManagedObject {
     @NSManaged var skills: NSSet?
     @NSManaged var works: NSSet?
     @NSManaged var educations: NSSet?
+    @NSManaged var projects: NSSet?
     
     convenience init(insertInto context: NSManagedObjectContext, resume: Resume) {
         self.init(entity: ResumeMO.entity(), insertInto: context)
@@ -23,6 +24,7 @@ final class ResumeMO: NSManagedObject {
         skills = NSSet(array: resume.skills.map { SkillMO(insertInto: context, skill: $0) })
         works = NSSet(array: resume.works.map { WorkMO(insertInto: context, work: $0) })
         educations = NSSet(array: resume.educations.map { EducationMO(insertInto: context, education: $0) })
+        projects = NSSet(array: resume.projects.map { ProjectMO(insertInto: context, project: $0) })
     }
 }
 
@@ -33,7 +35,8 @@ extension ResumeMO {
             personalInfo: personalInfo.toPresentationModel,
             skills: (skills as? Set<SkillMO>)?.map { $0.toPresentationModel } ?? [],
             works: (works as? Set<WorkMO>)?.map { $0.toPresentationModel } ?? [],
-            educations: (educations as? Set<EducationMO>)?.map { $0.toPresentationModel } ?? []
+            educations: (educations as? Set<EducationMO>)?.map { $0.toPresentationModel } ?? [],
+            projects: (projects as? Set<ProjectMO>)?.map { $0.toPresentationModel } ?? []
         )
     }
 }

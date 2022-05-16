@@ -24,10 +24,24 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="Project" representedClassName="ProjectMO" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="role" optional="YES" attributeType="String"/>
+        <attribute name="summary" optional="YES" attributeType="String"/>
+        <attribute name="teamSize" optional="YES" attributeType="String"/>
+        <attribute name="usedTech" optional="YES" attributeType="String"/>
+        <relationship name="resumes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Resume" inverseName="projects" inverseEntity="Resume"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <entity name="Resume" representedClassName="ResumeMO" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String"/>
         <relationship name="educations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Education" inverseName="resumes" inverseEntity="Education"/>
         <relationship name="personalInfo" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="PersonalInfo" inverseName="resume" inverseEntity="PersonalInfo"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="resumes" inverseEntity="Project"/>
         <relationship name="skills" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Skill" inverseName="resumes" inverseEntity="Skill"/>
         <relationship name="works" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Work" inverseName="resumes" inverseEntity="Work"/>
         <uniquenessConstraints>
@@ -59,8 +73,9 @@
     <elements>
         <element name="Education" positionX="-108" positionY="27" width="128" height="89"/>
         <element name="PersonalInfo" positionX="-13.36346435546875" positionY="5.341583251953125" width="128" height="164"/>
-        <element name="Resume" positionX="-203.2980346679688" positionY="-108.080078125" width="128" height="104"/>
+        <element name="Resume" positionX="-203.2980346679688" positionY="-108.080078125" width="128" height="119"/>
         <element name="Skill" positionX="-99" positionY="9" width="128" height="59"/>
         <element name="Work" positionX="-90" positionY="27" width="128" height="89"/>
+        <element name="Project" positionX="-108" positionY="27" width="128" height="119"/>
     </elements>
 </model>

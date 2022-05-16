@@ -27,7 +27,7 @@ struct ResumeView: View {
                     Button {
                         viewModel.addNewResume(resume)
                     } label: {
-                        Text("Add")
+                        Text("Save")
                     }
                     Button {
                         item = ActivityItem(
@@ -50,6 +50,7 @@ struct ResumeView: View {
         case .skills: return AnyView(SkillsView(skills: $resume.skills))
         case .works: return AnyView(WorksView(works: $resume.works))
         case .educations: return AnyView(EducationsView(educations: $resume.educations))
+        case .projects: return AnyView(ProjectsView(projects: $resume.projects))
         }
     }
 }
