@@ -10,11 +10,13 @@ import Foundation
 struct Work {
     
     var name: String
+    var startDate: Date
+    var endDate: Date
 }
 
 extension Work {
     
     init() {
-        self.init(name: "")
+        self.init(name: "", startDate: Date(), endDate: Date())
     }
 }

@@ -11,16 +11,33 @@ struct WorksView: View {
     @Binding var works: [Work]
     var body: some View {
         VStack {
-            List(works, id: \.name) { work in
-                Text(work.name)
-            }
-            Button {
-                let work = Work(name: "Work1")
-                works.append(work)
-            } label: {
-                Text("Add Works")
+            List {
+                ForEach(works.indices, id: \.self) { index in
+                    VStack {
+                        TextField("Company", text: $works[index].name)
+                            .textFieldStyle(.roundedBorder)
+                        DatePicker("Start Date", selection: $works[index].startDate, displayedComponents: .date)
+                        DatePicker("End Date", selection: $works[index].endDate, displayedComponents: .date)
+                    }
+                    .padding()
+                }
+                .onDelete {
+                    works.remove(atOffsets: $0)
+                }
             }
         }
+        .navigationTitle("Works")
+        .toolbar(
+            content: {
+                HStack {
+                    Button {
+                        works.append(Work())
+                    } label: {
+                        Text("Add")
+                    }
+                }
+            }
+        )
     }
 }
 
