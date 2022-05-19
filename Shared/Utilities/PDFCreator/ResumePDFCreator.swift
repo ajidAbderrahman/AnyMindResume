@@ -45,7 +45,7 @@ final class ResumePDFCreator {
     }
     
     // provide size and position for each element
-    //also calculate total Hegiht for all elements
+    //also calculate total Height for all elements
     private func rect(for type: ElementType) -> CGRect {
         var rectangle = CGRect.zero
         switch type {
@@ -67,7 +67,6 @@ final class ResumePDFCreator {
     }
     
     // MARK: Resume helpers method
-    
     private func addPersonalInfo(_ info: PersonalInfo) {
         pdfCreator.addImage(info.image, rect: rect(for: .image))
         pdfCreator.addText(info.fullName, rect: rect(for: .title), size: titleFontSize)
