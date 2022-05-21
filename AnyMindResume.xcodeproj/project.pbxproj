@@ -48,11 +48,11 @@
 		8065671D28315C99004256BA /* ResumePDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671B28315C99004256BA /* ResumePDFCreator.swift */; };
 		806C442B282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442C282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
-		806C442D282C20B9003D1A57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4404282C20B7003D1A57 /* ContentView.swift */; };
-		806C442E282C20B9003D1A57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4404282C20B7003D1A57 /* ContentView.swift */; };
+		806C442D282C20B9003D1A57 /* ResumesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4404282C20B7003D1A57 /* ResumesView.swift */; };
+		806C442E282C20B9003D1A57 /* ResumesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4404282C20B7003D1A57 /* ResumesView.swift */; };
 		806C442F282C20B9003D1A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 806C4405282C20B9003D1A57 /* Assets.xcassets */; };
 		806C4430282C20B9003D1A57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 806C4405282C20B9003D1A57 /* Assets.xcassets */; };
-		806C4452282C28D6003D1A57 /* ContentViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4451282C28D6003D1A57 /* ContentViewTest.swift */; };
+		806C4452282C28D6003D1A57 /* ResumesViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4451282C28D6003D1A57 /* ResumesViewTest.swift */; };
 		806C4455282C2A46003D1A57 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = 806C4454282C2A46003D1A57 /* ViewInspector */; };
 		8071D75C28325256003E11CF /* EducationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071D75B28325256003E11CF /* EducationsView.swift */; };
 		8071D75D28325256003E11CF /* EducationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8071D75B28325256003E11CF /* EducationsView.swift */; };
@@ -110,13 +110,13 @@
 		8065671528312177004256BA /* ActivityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
 		8065671B28315C99004256BA /* ResumePDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumePDFCreator.swift; sourceTree = "<group>"; };
 		806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyMindResumeApp.swift; sourceTree = "<group>"; };
-		806C4404282C20B7003D1A57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		806C4404282C20B7003D1A57 /* ResumesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesView.swift; sourceTree = "<group>"; };
 		806C4405282C20B9003D1A57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		806C440A282C20B9003D1A57 /* AnyMindResume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyMindResume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806C4410282C20B9003D1A57 /* AnyMindResume.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyMindResume.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806C4412282C20B9003D1A57 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		806C4448282C289F003D1A57 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		806C4451282C28D6003D1A57 /* ContentViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTest.swift; sourceTree = "<group>"; };
+		806C4451282C28D6003D1A57 /* ResumesViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesViewTest.swift; sourceTree = "<group>"; };
 		8071D75B28325256003E11CF /* EducationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationsView.swift; sourceTree = "<group>"; };
 		8071D75E283252E2003E11CF /* Education.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Education.swift; sourceTree = "<group>"; };
 		8071D761283253F8003E11CF /* EducationMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationMO.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */,
-				806C4404282C20B7003D1A57 /* ContentView.swift */,
+				806C4404282C20B7003D1A57 /* ResumesView.swift */,
 				80247EC6282D126B000350C6 /* Personal Info */,
 				80247EE4282D6D9D000350C6 /* ResumeView.swift */,
 				809B4C0E283034D300927067 /* SkillsView.swift */,
@@ -316,7 +316,7 @@
 		806C4449282C289F003D1A57 /* Tests iOS */ = {
 			isa = PBXGroup;
 			children = (
-				806C4451282C28D6003D1A57 /* ContentViewTest.swift */,
+				806C4451282C28D6003D1A57 /* ResumesViewTest.swift */,
 				80247ECA282D1323000350C6 /* PersonalInfoViewTest.swift */,
 			);
 			path = "Tests iOS";
@@ -488,7 +488,7 @@
 				80616700282FD28D0033EB26 /* PersonalInfoMO.swift in Sources */,
 				8061858C2831A9A700DCB09C /* WorkMO.swift in Sources */,
 				809B4C0F283034D300927067 /* SkillsView.swift in Sources */,
-				806C442D282C20B9003D1A57 /* ContentView.swift in Sources */,
+				806C442D282C20B9003D1A57 /* ResumesView.swift in Sources */,
 				807D987328325B5700C06FFE /* Project.swift in Sources */,
 				808DB344282E66EA00452F5D /* PersonalInfo.swift in Sources */,
 				80247ECD282D2A30000350C6 /* PersonalInfoForm.swift in Sources */,
@@ -527,7 +527,7 @@
 				8065671D28315C99004256BA /* ResumePDFCreator.swift in Sources */,
 				80616701282FD28D0033EB26 /* PersonalInfoMO.swift in Sources */,
 				809B4C10283034D300927067 /* SkillsView.swift in Sources */,
-				806C442E282C20B9003D1A57 /* ContentView.swift in Sources */,
+				806C442E282C20B9003D1A57 /* ResumesView.swift in Sources */,
 				807D987428325B5700C06FFE /* Project.swift in Sources */,
 				808DB345282E66EA00452F5D /* PersonalInfo.swift in Sources */,
 				80247ECE282D2A30000350C6 /* PersonalInfoForm.swift in Sources */,
@@ -543,7 +543,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				80247ECB282D1323000350C6 /* PersonalInfoViewTest.swift in Sources */,
-				806C4452282C28D6003D1A57 /* ContentViewTest.swift in Sources */,
+				806C4452282C28D6003D1A57 /* ResumesViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

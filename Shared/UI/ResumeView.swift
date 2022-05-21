@@ -77,6 +77,6 @@ extension ResumeView {
 //MARK: Preview
 struct ResumeView_Previews: PreviewProvider {
     static var previews: some View {
-        ResumeView(viewModel: ResumeView.ViewModel(), resume: Resume())
+        ResumeView(viewModel: ResumeView.ViewModel(), resume: Resume(title: "Resume Title"))
     }
 }
