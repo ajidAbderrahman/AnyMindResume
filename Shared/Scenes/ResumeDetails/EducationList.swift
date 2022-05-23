@@ -1,5 +1,5 @@
 //
-//  EducationsView.swift
+//  EducationList.swift
 //  AnyMindResume
 //
 //  Created by Abderrahman Ajid on 16/5/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EducationsView: View {
+struct EducationList: View {
     @Binding var educations: [Education]
     var body: some View {
         VStack {
@@ -44,8 +44,8 @@ struct EducationsView: View {
     }
 }
 
-struct EducationsView_Previews: PreviewProvider {
+struct EducationList_Previews: PreviewProvider {
     static var previews: some View {
-        EducationsView(educations: Binding<[Education]>.constant([]))
+        EducationList(educations: Binding<[Education]>.constant([]))
     }
 }

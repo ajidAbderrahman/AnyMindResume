@@ -1,5 +1,5 @@
 //
-//  ResumeView.swift
+//  ResumeDetails.swift
 //  AnyMindResume
 //
 //  Created by Abderrahman Ajid on 12/5/2022.
@@ -9,7 +9,7 @@ import SwiftUI
 import Resolver
 
 // MARK: Resume View
-struct ResumeView: View {
+struct ResumeDetails: View {
     @ObservedObject private(set) var viewModel: ViewModel
     var body: some View {
         List(viewModel.sections, id: \.self) { section in
@@ -41,16 +41,16 @@ struct ResumeView: View {
     private func content(_ section: ResumeSection) -> AnyView {
         switch section {
         case .personalInfo: return AnyView(PersonalInfoView(personalInfo: $viewModel.resume.personalInfo))
-        case .skills: return AnyView(SkillsView(skills: $viewModel.resume.skills))
-        case .works: return AnyView(WorksView(works: $viewModel.resume.works))
-        case .educations: return AnyView(EducationsView(educations: $viewModel.resume.educations))
-        case .projects: return AnyView(ProjectsView(projects: $viewModel.resume.projects))
+        case .skills: return AnyView(SkillList(skills: $viewModel.resume.skills))
+        case .works: return AnyView(WorkList(works: $viewModel.resume.works))
+        case .educations: return AnyView(EducationList(educations: $viewModel.resume.educations))
+        case .projects: return AnyView(ProjectList(projects: $viewModel.resume.projects))
         }
     }
 }
 
 //MARK: ViewModel
-extension ResumeView {
+extension ResumeDetails {
     
     class ViewModel: ObservableObject {
         
@@ -85,10 +85,10 @@ extension ResumeView {
 }
 
 //MARK: Preview
-struct ResumeView_Previews: PreviewProvider {
+struct ResumeDetails_Previews: PreviewProvider {
     static var previews: some View {
-        ResumeView(
-            viewModel: ResumeView.ViewModel(
+        ResumeDetails(
+            viewModel: ResumeDetails.ViewModel(
                 resume: Resume(title: "Resume Title")
             )
         )

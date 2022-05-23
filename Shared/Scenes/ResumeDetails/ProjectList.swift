@@ -1,5 +1,5 @@
 //
-//  ProjectsView.swift
+//  ProjectList.swift
 //  AnyMindResume
 //
 //  Created by Abderrahman Ajid on 16/5/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProjectsView: View {
+struct ProjectList: View {
     @Binding var projects: [Project]
     var body: some View {
         List {
@@ -52,8 +52,8 @@ struct ProjectsView: View {
     }
 }
 
-struct ProjectsView_Previews: PreviewProvider {
+struct ProjectList_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectsView(projects: Binding<[Project]>.constant([]))
+        ProjectList(projects: Binding<[Project]>.constant([]))
     }
 }

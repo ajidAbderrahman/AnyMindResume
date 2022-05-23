@@ -1,5 +1,5 @@
 //
-//  WorksView.swift
+//  WorkList.swift
 //  AnyMindResume
 //
 //  Created by Abderrahman Ajid on 15/5/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WorksView: View {
+struct WorkList: View {
     @Binding var works: [Work]
     var body: some View {
         VStack {
@@ -42,8 +42,8 @@ struct WorksView: View {
     }
 }
 
-struct WorksView_Previews: PreviewProvider {
+struct WorkList_Previews: PreviewProvider {
     static var previews: some View {
-        WorksView(works: Binding<[Work]>.constant([]))
+        WorkList(works: Binding<[Work]>.constant([]))
     }
 }

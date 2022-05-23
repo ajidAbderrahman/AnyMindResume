@@ -1,5 +1,5 @@
 //
-//  SkillsView.swift
+//  SkillList.swift
 //  AnyMindResume
 //
 //  Created by Abderrahman Ajid on 14/5/2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SkillsView: View {
+struct SkillList: View {
     @Binding var skills: [Skill]
     @State private var skillName = ""
     var body: some View {
@@ -54,8 +54,8 @@ struct SkillsView: View {
     }
 }
 
-struct SkillsView_Previews: PreviewProvider {
+struct SkillList_Previews: PreviewProvider {
     static var previews: some View {
-        SkillsView(skills: Binding<[Skill]>.constant([]))
+        SkillList(skills: Binding<[Skill]>.constant([]))
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ResumesView.swift
+//  ResumeList.swift
 //  Shared
 //
 //  Created by Abderrahman Ajid on 11/5/2022.
@@ -9,7 +9,7 @@ import SwiftUI
 import Resolver
 
 // MARK: Resumes View
-struct ResumesView: View {
+struct ResumeList: View {
     
     @ObservedObject private(set) var viewModel: ViewModel
     
@@ -29,11 +29,11 @@ struct ResumesView: View {
         }
     }
     
-    private func addResume() -> NavigationLink<Text, ResumeView> {
+    private func addResume() -> NavigationLink<Text, ResumeDetails> {
         // TODO: add request for user to set resume title
         return NavigationLink {
-            ResumeView(
-                viewModel: ResumeView.ViewModel(
+            ResumeDetails(
+                viewModel: ResumeDetails.ViewModel(
                     resume: Resume(title: "New Resume")
                 )
             )
@@ -44,7 +44,7 @@ struct ResumesView: View {
 }
 
 // MARK: ViewModel
-extension ResumesView {
+extension ResumeList {
     class ViewModel: ObservableObject {
         
         @Injected var persistanceManager: DataRepo
@@ -58,10 +58,10 @@ extension ResumesView {
 }
 
 //MARK: Resumes View Preview
-struct ResumesView_Previews: PreviewProvider {
+struct ResumeList_Previews: PreviewProvider {
     static var previews: some View {
-        ResumesView(
-            viewModel: ResumesView.ViewModel()
+        ResumeList(
+            viewModel: ResumeList.ViewModel()
         )
     }
 }
@@ -73,7 +73,7 @@ struct ResumeRow: View {
     
     var body: some View {
         NavigationLink {
-            ResumeView(viewModel: ResumeView.ViewModel(resume: resume))
+            ResumeDetails(viewModel: ResumeDetails.ViewModel(resume: resume))
         } label: {
             Text(resume.title)
                 .padding()
