@@ -1,22 +1,27 @@
 //
-//  LocalDataManager.swift
+//  DataRepo.swift
 //  AnyMindResume
 //
 //  Created by Abderrahman Ajid on 14/5/2022.
 //
+
+protocol DataRepo {
+    func fetchResumeList() -> [Resume]
+    func addResume(_ value: Resume)
+}
+
+
+// MARK: Persistence Repository
 import CoreData
 
-class LocalDataManager {
+class PersistenceRepo {
     
-    static let shared: DataManager = LocalDataManager()
-    
-    var dbHelper: CoreDBHelper = CoreDBHelper.shared
-    
-    private init() { }
+    private var dbHelper: CoreDBHelper = CoreDBHelper.shared
     
 }
 
-extension LocalDataManager: DataManager {
+extension PersistenceRepo: DataRepo {
+    
     func fetchResumeList() -> [Resume] {
         let result: Result<[ResumeMO], Error> = dbHelper.fetch(ResumeMO.self)
         switch result {

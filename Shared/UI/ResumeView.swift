@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct ResumeView: View {
     @ObservedObject private(set) var viewModel: ViewModel
@@ -60,14 +61,10 @@ extension ResumeView {
     
     class ViewModel: ObservableObject {
         
-        private let dataManager: DataManager
-        
-        init(dataManager: DataManager = LocalDataManager.shared) {
-            self.dataManager = dataManager
-        }
+        @LazyInjected private var persistanceManager: DataRepo
         
         func addNewResume(_ value: Resume) {
-            dataManager.addResume(value)
+            persistanceManager.addResume(value)
         }
         
     }

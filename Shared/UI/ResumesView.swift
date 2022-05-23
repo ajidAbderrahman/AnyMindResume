@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import Resolver
 
 struct ResumesView: View {
+    
     @ObservedObject private(set) var viewModel: ViewModel
     
     var body: some View {
@@ -20,7 +22,7 @@ struct ResumesView: View {
                 .padding()
             }
             .onAppear {
-                viewModel.reloadResumes()
+                viewModel.loadResumes()
             }
             .navigationTitle("Resumes")
         }
@@ -45,18 +47,13 @@ struct ResumesView: View {
 
 //MARK: ViewModel
 extension ResumesView {
-    
     class ViewModel: ObservableObject {
-        private let dataManager: DataManager
-        @Published var resumes: [Resume]
         
-        init(resumes: [Resume]) {
-            self.resumes = resumes
-            self.dataManager = LocalDataManager.shared
-        }
+        @Injected var persistanceManager: DataRepo
+        @Published var resumes: [Resume] = []
         
-        func reloadResumes() {
-            resumes = dataManager.fetchResumeList()
+        func loadResumes() {
+            resumes = persistanceManager.fetchResumeList()
         }
     }
     
@@ -65,8 +62,8 @@ extension ResumesView {
 //MARK: Preview
 struct ResumesView_Previews: PreviewProvider {
     static var previews: some View {
-        ResumesView(viewModel: ResumesView.ViewModel(resumes: [
-            Resume(title: "Resume Title")
-        ]))
+        ResumesView(
+            viewModel: ResumesView.ViewModel()
+        )
     }
 }

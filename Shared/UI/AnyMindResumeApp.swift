@@ -9,15 +9,13 @@ import SwiftUI
 
 @main
 struct AnyMindResumeApp: App {
-    let managedObjectContext = CoreDBHelper.shared.context
-    var resumeList: [Resume] {
-        LocalDataManager.shared.fetchResumeList()
-    }
     
     var body: some Scene {
         WindowGroup {
-            ResumesView(viewModel: ResumesView.ViewModel(resumes: resumeList))
-                .environment(\.managedObjectContext, managedObjectContext)
+            ResumesView(
+                viewModel: ResumesView.ViewModel()
+            )
+            .environment(\.managedObjectContext, CoreDBHelper.shared.context)
         }
     }
 }
