@@ -27,8 +27,6 @@
 		80616701282FD28D0033EB26 /* PersonalInfoMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806166FF282FD28D0033EB26 /* PersonalInfoMO.swift */; };
 		80616704282FD40A0033EB26 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80616703282FD40A0033EB26 /* DBHelper.swift */; };
 		80616705282FD40A0033EB26 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80616703282FD40A0033EB26 /* DBHelper.swift */; };
-		80616707282FD43C0033EB26 /* CoreDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80616706282FD43C0033EB26 /* CoreDBHelper.swift */; };
-		80616708282FD43C0033EB26 /* CoreDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80616706282FD43C0033EB26 /* CoreDBHelper.swift */; };
 		8061670B282FD4DA0033EB26 /* DataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061670A282FD4DA0033EB26 /* DataRepo.swift */; };
 		8061670C282FD4DA0033EB26 /* DataRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061670A282FD4DA0033EB26 /* DataRepo.swift */; };
 		8061858C2831A9A700DCB09C /* WorkMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8061858B2831A9A700DCB09C /* WorkMO.swift */; };
@@ -100,7 +98,6 @@
 		806166FC282FD2680033EB26 /* ResumeMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeMO.swift; sourceTree = "<group>"; };
 		806166FF282FD28D0033EB26 /* PersonalInfoMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoMO.swift; sourceTree = "<group>"; };
 		80616703282FD40A0033EB26 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
-		80616706282FD43C0033EB26 /* CoreDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDBHelper.swift; sourceTree = "<group>"; };
 		8061670A282FD4DA0033EB26 /* DataRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepo.swift; sourceTree = "<group>"; };
 		8061858B2831A9A700DCB09C /* WorkMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkMO.swift; sourceTree = "<group>"; };
 		8061858E2831A9FA00DCB09C /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
@@ -223,7 +220,6 @@
 			children = (
 				80D6BEAB282EDF1500A429A3 /* db_model_v1.xcdatamodeld */,
 				80616703282FD40A0033EB26 /* DBHelper.swift */,
-				80616706282FD43C0033EB26 /* CoreDBHelper.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -261,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				8061670A282FD4DA0033EB26 /* DataRepo.swift */,
+				80616702282FD37B0033EB26 /* Persistence */,
 			);
 			path = Repos;
 			sourceTree = "<group>";
@@ -289,7 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				80616709282FD4670033EB26 /* Utilities */,
-				80616702282FD37B0033EB26 /* Persistence */,
 				80247EC0282D0D81000350C6 /* Models */,
 				80247EC4282D0DF3000350C6 /* UI */,
 				80247EC5282D0E32000350C6 /* Resources */,
@@ -478,7 +474,6 @@
 				809B4C0C28302BBC00927067 /* SkillMO.swift in Sources */,
 				80247EE2282D5FCD000350C6 /* ImagePicker.swift in Sources */,
 				809B4C032830278900927067 /* Skill.swift in Sources */,
-				80616707282FD43C0033EB26 /* CoreDBHelper.swift in Sources */,
 				80247EC2282D0D9E000350C6 /* Resume.swift in Sources */,
 				8065671028311B0A004256BA /* PDFCreator.swift in Sources */,
 				80247EE5282D6D9D000350C6 /* ResumeView.swift in Sources */,
@@ -518,7 +513,6 @@
 				8061858D2831A9A700DCB09C /* WorkMO.swift in Sources */,
 				809B4C042830278900927067 /* Skill.swift in Sources */,
 				806185902831A9FA00DCB09C /* Work.swift in Sources */,
-				80616708282FD43C0033EB26 /* CoreDBHelper.swift in Sources */,
 				80247EC3282D0D9E000350C6 /* Resume.swift in Sources */,
 				8065671128311B0A004256BA /* PDFCreator.swift in Sources */,
 				8071D763283253F8003E11CF /* EducationMO.swift in Sources */,

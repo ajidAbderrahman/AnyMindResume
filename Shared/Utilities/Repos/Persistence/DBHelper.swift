@@ -1,38 +1,37 @@
 //
-//  DBHelper+CoreData.swift
+//  DBHelper+Protocol.swift
 //  AnyMindResume
 //
 //  Created by Abderrahman Ajid on 14/5/2022.
 //
 
+protocol DBHelper {
+    associatedtype ObjectType
+    
+    func create(_ object: ObjectType)
+    func fetch(_ objectType: ObjectType.Type) -> Result<[ObjectType], Error>
+    func delete(_ object: ObjectType)
+}
+
+// MARK: CoreData helper
 import CoreData
 
 class CoreDBHelper {
-    static let shared = CoreDBHelper()
     
-    var context: NSManagedObjectContext { persistentContainer.viewContext }
+    var context: NSManagedObjectContext {
+        container.viewContext
+    }
     
-    private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "db_model_v1")
+    private let container: NSPersistentContainer
+    
+    init() {
+        container = NSPersistentContainer(name: "db_model_v1")
         container.viewContext.mergePolicy = NSMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
-        return container
-    }()
-
-    func saveContext () {
-        let context = persistentContainer.viewContext
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
     }
 }
 

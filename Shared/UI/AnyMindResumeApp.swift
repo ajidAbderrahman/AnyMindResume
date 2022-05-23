@@ -15,7 +15,6 @@ struct AnyMindResumeApp: App {
             ResumesView(
                 viewModel: ResumesView.ViewModel()
             )
-            .environment(\.managedObjectContext, CoreDBHelper.shared.context)
         }
     }
 }

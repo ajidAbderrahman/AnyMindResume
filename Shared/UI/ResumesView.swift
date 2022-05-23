@@ -8,6 +8,7 @@
 import SwiftUI
 import Resolver
 
+// MARK: Resumes View
 struct ResumesView: View {
     
     @ObservedObject private(set) var viewModel: ViewModel
@@ -16,10 +17,10 @@ struct ResumesView: View {
         NavigationView {
             VStack(alignment: .trailing) {
                 List(viewModel.resumes, id: \.title) { resume in
-                    resumesRow(resume)
+                    ResumeRow(resume: resume)
                 }
                 addResume()
-                .padding()
+                    .padding()
             }
             .onAppear {
                 viewModel.loadResumes()
@@ -28,24 +29,21 @@ struct ResumesView: View {
         }
     }
     
-    private func resumesRow(_ resume: Resume) -> NavigationLink<Text, ResumeView> {
-        return NavigationLink {
-            ResumeView(viewModel: ResumeView.ViewModel(), resume: resume)
-        } label: {
-            Text(resume.title)
-        }
-    }
-    
     private func addResume() -> NavigationLink<Text, ResumeView> {
+        // TODO: add request for user to set resume title
         return NavigationLink {
-            ResumeView(viewModel: ResumeView.ViewModel(), resume: Resume(title: "Title"))
+            ResumeView(
+                viewModel: ResumeView.ViewModel(
+                    resume: Resume(title: "New Resume")
+                )
+            )
         } label: {
             Text("Add")
         }
     }
 }
 
-//MARK: ViewModel
+// MARK: ViewModel
 extension ResumesView {
     class ViewModel: ObservableObject {
         
@@ -59,11 +57,34 @@ extension ResumesView {
     
 }
 
-//MARK: Preview
+//MARK: Resumes View Preview
 struct ResumesView_Previews: PreviewProvider {
     static var previews: some View {
         ResumesView(
             viewModel: ResumesView.ViewModel()
         )
+    }
+}
+
+// MARK: Resume Row
+struct ResumeRow: View {
+    
+    let resume: Resume
+    
+    var body: some View {
+        NavigationLink {
+            ResumeView(viewModel: ResumeView.ViewModel(resume: resume))
+        } label: {
+            Text(resume.title)
+                .padding()
+        }
+    }
+}
+
+//MARK: Resumes View Preview
+struct ResumeRow_Previews: PreviewProvider {
+    static var previews: some View {
+        ResumeRow(resume: Resume(title: "Resume Example"))
+            .previewLayout(.sizeThatFits)
     }
 }

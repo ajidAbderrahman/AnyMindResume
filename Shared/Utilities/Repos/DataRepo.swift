@@ -16,7 +16,11 @@ import CoreData
 
 class PersistenceRepo {
     
-    private var dbHelper: CoreDBHelper = CoreDBHelper.shared
+    private let dbHelper: CoreDBHelper
+    
+    init(dbHelper: CoreDBHelper) {
+        self.dbHelper = dbHelper
+    }
     
 }
 

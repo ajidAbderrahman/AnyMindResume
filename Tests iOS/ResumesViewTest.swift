@@ -13,4 +13,6 @@ extension ResumesView: Inspectable {}
 
 class ResumesViewTest: XCTestCase {
     
+    
+    
 }

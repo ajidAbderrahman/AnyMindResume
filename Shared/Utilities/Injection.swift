@@ -9,6 +9,7 @@ import Resolver
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
-        register { PersistenceRepo() }.implements(DataRepo.self)
+        register { PersistenceRepo(dbHelper: resolve()) }.implements(DataRepo.self).scope(.application)
+        register { CoreDBHelper() }.scope(.application)
     }
 }
