@@ -37,14 +37,12 @@
 		806185962831AB9B00DCB09C /* WorksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806185942831AB9B00DCB09C /* WorksView.swift */; };
 		806567072830F4A2004256BA /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806567062830F4A2004256BA /* ImagePickerView.swift */; };
 		806567082830F4A2004256BA /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806567062830F4A2004256BA /* ImagePickerView.swift */; };
-		8065671028311B0A004256BA /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065670F28311B0A004256BA /* PDFCreator.swift */; };
-		8065671128311B0A004256BA /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065670F28311B0A004256BA /* PDFCreator.swift */; };
 		80656713283120F0004256BA /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80656712283120F0004256BA /* ActivityView.swift */; };
 		80656714283120F0004256BA /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80656712283120F0004256BA /* ActivityView.swift */; };
 		8065671628312177004256BA /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671528312177004256BA /* ActivityItem.swift */; };
 		8065671728312177004256BA /* ActivityItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671528312177004256BA /* ActivityItem.swift */; };
-		8065671C28315C99004256BA /* ResumePDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671B28315C99004256BA /* ResumePDFCreator.swift */; };
-		8065671D28315C99004256BA /* ResumePDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671B28315C99004256BA /* ResumePDFCreator.swift */; };
+		8065671C28315C99004256BA /* PDFCreator+Resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671B28315C99004256BA /* PDFCreator+Resume.swift */; };
+		8065671D28315C99004256BA /* PDFCreator+Resume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8065671B28315C99004256BA /* PDFCreator+Resume.swift */; };
 		806C442B282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442C282C20B9003D1A57 /* AnyMindResumeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */; };
 		806C442D282C20B9003D1A57 /* ResumesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806C4404282C20B7003D1A57 /* ResumesView.swift */; };
@@ -103,10 +101,9 @@
 		8061858E2831A9FA00DCB09C /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
 		806185942831AB9B00DCB09C /* WorksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksView.swift; sourceTree = "<group>"; };
 		806567062830F4A2004256BA /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
-		8065670F28311B0A004256BA /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 		80656712283120F0004256BA /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		8065671528312177004256BA /* ActivityItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItem.swift; sourceTree = "<group>"; };
-		8065671B28315C99004256BA /* ResumePDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumePDFCreator.swift; sourceTree = "<group>"; };
+		8065671B28315C99004256BA /* PDFCreator+Resume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PDFCreator+Resume.swift"; sourceTree = "<group>"; };
 		806C4403282C20B7003D1A57 /* AnyMindResumeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyMindResumeApp.swift; sourceTree = "<group>"; };
 		806C4404282C20B7003D1A57 /* ResumesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumesView.swift; sourceTree = "<group>"; };
 		806C4405282C20B9003D1A57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -265,8 +262,7 @@
 		8065671E28315CB0004256BA /* PDFCreator */ = {
 			isa = PBXGroup;
 			children = (
-				8065671B28315C99004256BA /* ResumePDFCreator.swift */,
-				8065670F28311B0A004256BA /* PDFCreator.swift */,
+				8065671B28315C99004256BA /* PDFCreator+Resume.swift */,
 			);
 			path = PDFCreator;
 			sourceTree = "<group>";
@@ -475,7 +471,6 @@
 				80247EE2282D5FCD000350C6 /* ImagePicker.swift in Sources */,
 				809B4C032830278900927067 /* Skill.swift in Sources */,
 				80247EC2282D0D9E000350C6 /* Resume.swift in Sources */,
-				8065671028311B0A004256BA /* PDFCreator.swift in Sources */,
 				80247EE5282D6D9D000350C6 /* ResumeView.swift in Sources */,
 				8071D762283253F8003E11CF /* EducationMO.swift in Sources */,
 				80656713283120F0004256BA /* ActivityView.swift in Sources */,
@@ -484,7 +479,7 @@
 				80D6BEAD282EDF1500A429A3 /* db_model_v1.xcdatamodeld in Sources */,
 				807D987928325E3400C06FFE /* ProjectsView.swift in Sources */,
 				807D987628325C4600C06FFE /* ProjectMO.swift in Sources */,
-				8065671C28315C99004256BA /* ResumePDFCreator.swift in Sources */,
+				8065671C28315C99004256BA /* PDFCreator+Resume.swift in Sources */,
 				80616700282FD28D0033EB26 /* PersonalInfoMO.swift in Sources */,
 				8061858C2831A9A700DCB09C /* WorkMO.swift in Sources */,
 				809B4C0F283034D300927067 /* SkillsView.swift in Sources */,
@@ -514,7 +509,6 @@
 				809B4C042830278900927067 /* Skill.swift in Sources */,
 				806185902831A9FA00DCB09C /* Work.swift in Sources */,
 				80247EC3282D0D9E000350C6 /* Resume.swift in Sources */,
-				8065671128311B0A004256BA /* PDFCreator.swift in Sources */,
 				8071D763283253F8003E11CF /* EducationMO.swift in Sources */,
 				80247EE6282D6D9D000350C6 /* ResumeView.swift in Sources */,
 				8071D760283252E2003E11CF /* Education.swift in Sources */,
@@ -523,7 +517,7 @@
 				807D987A28325E3400C06FFE /* ProjectsView.swift in Sources */,
 				807D987728325C4600C06FFE /* ProjectMO.swift in Sources */,
 				80D6BEAE282EDF1500A429A3 /* db_model_v1.xcdatamodeld in Sources */,
-				8065671D28315C99004256BA /* ResumePDFCreator.swift in Sources */,
+				8065671D28315C99004256BA /* PDFCreator+Resume.swift in Sources */,
 				80616701282FD28D0033EB26 /* PersonalInfoMO.swift in Sources */,
 				809B4C10283034D300927067 /* SkillsView.swift in Sources */,
 				80331A21283B9001007BEB37 /* Injection.swift in Sources */,

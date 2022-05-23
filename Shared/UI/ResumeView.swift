@@ -62,7 +62,7 @@ extension ResumeView {
             resume.sections
         }
         
-        private var pdfData: Data? { ResumePDFCreator(resume).resumePDF?.dataRepresentation() }
+        private var pdfData: Data? { ResumePDF(from: resume).data }
         
         init(resume: Resume) {
             self.resume = resume

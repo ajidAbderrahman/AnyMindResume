@@ -1,5 +1,5 @@
 //
-//  ResumePDFCreator.swift
+//  PDFCreator+Resume.swift
 //  AnyMindResume
 //
 //  Created by Abderrahman Ajid on 15/5/2022.
@@ -7,13 +7,14 @@
 
 import PDFKit
 
-final class ResumePDFCreator {
+// MARK: Resume PDF
+final class ResumePDF {
     
     private let resume: Resume
     private let pageRect = CGRect(x: 0, y: 0, width: (8.5 * 72.0), height: (11 * 72.0))
     private let pdfCreator: PDFCreator
     
-    init(_ resume: Resume) {
+    init(from resume: Resume) {
         self.resume = resume
         self.pdfCreator = PDFCreator(title: resume.title, pageRect: pageRect)
     }
@@ -25,7 +26,7 @@ final class ResumePDFCreator {
     private var addNewPage: (() -> Void)?
     
     // return the pdf drawing as a Data object
-    private var data: Data? {
+    private var pdfData: Data? {
         
         guard let renderer = pdfCreator.renderer else {
             return nil
@@ -40,12 +41,12 @@ final class ResumePDFCreator {
         return data
     }
     
-    var resumePDF: PDFDocument? {
-        pdfCreator.pdfDoc(data)
+    var data: Data? {
+        pdfCreator.pdfDoc(pdfData)?.dataRepresentation()
     }
     
     // provide size and position for each element
-    //also calculate total Height for all elements
+    // also calculate total Height for all elements
     private func rect(for type: ElementType) -> CGRect {
         var rectangle = CGRect.zero
         switch type {
@@ -94,4 +95,63 @@ final class ResumePDFCreator {
         }
     }
     
+}
+
+// MARK: PDF Creator
+final fileprivate class PDFCreator : NSObject {
+    
+    private(set) var renderer: UIGraphicsPDFRenderer?
+    
+    init(title: String, pageRect: CGRect) {
+        let format = UIGraphicsPDFRendererFormat()
+        let metaData = [
+            kCGPDFContextCreator: "AnyMinResume",
+            kCGPDFContextAuthor: "Abderrahman Ajid",
+            kCGPDFContextTitle: title
+        ]
+        format.documentInfo = metaData as [String: Any]
+        self.renderer = UIGraphicsPDFRenderer(
+            bounds: pageRect,
+            format: format
+        )
+    }
+    
+    deinit {
+        self.renderer = nil
+    }
+    
+    func pdfDoc(_ pdfData: Data?) -> PDFDocument? {
+        guard let pdfData = pdfData else {
+            return nil
+        }
+        return PDFDocument(data: pdfData)
+    }
+}
+
+extension PDFCreator {
+    
+    func addImage(_ image:  UIImage?, rect: CGRect) {
+        guard let image = image else {
+            return
+        }
+        image.draw(in: rect)
+    }
+    
+    func addText(_ value: String, rect: CGRect, size: CGFloat) {
+        value.draw(in: rect, withAttributes: [ .font: UIFont.systemFont(ofSize: size) ])
+    }
+    
+    func addParagraph(_ value: String, rect: CGRect, size: CGFloat) {
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .justified
+        let attributes: [NSAttributedString.Key : Any] = [
+            .font: UIFont.systemFont(ofSize: size),
+            .paragraphStyle: paragraphStyle
+        ]
+        
+        value.draw(in: rect, withAttributes: attributes)
+        
+    }
+
 }
