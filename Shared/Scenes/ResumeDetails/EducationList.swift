@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EducationList: View {
-    @Binding var educations: [Education]
+    @Binding var educations: Educations
     var body: some View {
         VStack {
             List {
@@ -46,6 +46,6 @@ struct EducationList: View {
 
 struct EducationList_Previews: PreviewProvider {
     static var previews: some View {
-        EducationList(educations: Binding<[Education]>.constant([]))
+        EducationList(educations: Binding<Educations>.constant([]))
     }
 }

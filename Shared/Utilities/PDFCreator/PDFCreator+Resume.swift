@@ -79,14 +79,14 @@ final class ResumePDF {
         pdfCreator.addParagraph(info.objectives, rect: rect(for: .paragraph), size: textFontSize)
     }
     
-    private func addSkills(_ skills: [Skill]) {
+    private func addSkills(_ skills: Skills) {
         pdfCreator.addText("SKILLS", rect: rect(for: .title), size: titleFontSize)
         skills.forEach { skill in
             pdfCreator.addText(skill.name, rect: rect(for: .text), size: textFontSize)
         }
     }
     
-    private func addWorks(_ works: [Work]) {
+    private func addWorks(_ works: Works) {
         pdfCreator.addText("Works", rect: rect(for: .title), size: titleFontSize)
         works.forEach { work in
             pdfCreator.addText("Company name: \(work.name)", rect: rect(for: .text), size: textFontSize)

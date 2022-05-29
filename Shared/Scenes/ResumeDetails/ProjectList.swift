@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProjectList: View {
-    @Binding var projects: [Project]
+    @Binding var projects: Projects
     var body: some View {
         List {
             ForEach(projects.indices, id: \.self) { index in
@@ -54,6 +54,6 @@ struct ProjectList: View {
 
 struct ProjectList_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectList(projects: Binding<[Project]>.constant([]))
+        ProjectList(projects: Binding<Projects>.constant([]))
     }
 }

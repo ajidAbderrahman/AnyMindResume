@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SkillList: View {
-    @Binding var skills: [Skill]
+    @Binding var skills: Skills
     @State private var skillName = ""
     var body: some View {
         VStack {
@@ -56,6 +56,6 @@ struct SkillList: View {
 
 struct SkillList_Previews: PreviewProvider {
     static var previews: some View {
-        SkillList(skills: Binding<[Skill]>.constant([]))
+        SkillList(skills: Binding<Skills>.constant([]))
     }
 }

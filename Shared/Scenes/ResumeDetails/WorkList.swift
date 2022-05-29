@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WorkList: View {
-    @Binding var works: [Work]
+    @Binding var works: Works
     var body: some View {
         VStack {
             List {
@@ -44,6 +44,6 @@ struct WorkList: View {
 
 struct WorkList_Previews: PreviewProvider {
     static var previews: some View {
-        WorkList(works: Binding<[Work]>.constant([]))
+        WorkList(works: Binding<Works>.constant([]))
     }
 }
